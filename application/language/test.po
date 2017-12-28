@@ -1,0 +1,822 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kortingscode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-17 09:31+0530\n"
+"PO-Revision-Date: 2012-08-17 09:32+0530\n"
+"Last-Translator: kraj <kraj@seasiaconsulting.com>\n"
+"Language-Team: kortingscode <kortingscode@a.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;translate;jsgettext;jsMsgTranslate\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\kortingscode\n"
+"X-Poedit-Language: Hindi\n"
+"X-Poedit-Country: INDIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: kortingscode\n"
+
+#: kortingscode/application/modules/admin/controllers/AuthController.php:65
+msgid "Invalid username or password. Please try again."
+msgstr ""
+
+#: kortingscode/application/modules/admin/controllers/AuthController.php:123
+msgid "Your E-mail ID is not in our database"
+msgstr ""
+
+#: kortingscode/application/modules/admin/controllers/AuthController.php:154
+msgid "Forgot password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:9
+msgid "Content"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:17
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:20
+msgid "Offers"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:22
+msgid "All Offers"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:23
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:40
+msgid "Add New"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:34
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:174
+msgid "Shops"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:37
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:79
+msgid "Media"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:39
+msgid "Library"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:51
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:54
+msgid "Pages"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:56
+msgid "Create Page"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:69
+msgid "Popular Codes"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:86
+msgid "Administration"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:95
+msgid "Users"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:105
+msgid "Your Profile"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:115
+msgid "Widgets"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:125
+msgid "Home Page"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:134
+msgid "Categories"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:143
+msgid "Affilate Networks"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:152
+msgid "Footer"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:157
+msgid "Statistics"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:165
+msgid "Clickouts"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:183
+msgid "Visitors"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:192
+msgid "Emails"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:201
+msgid "Reports"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:207
+msgid "System Manager"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:215
+msgid "Searchbar"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:224
+msgid "Email Lightbox"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/LeftPanel.phtml:233
+msgid "Language File"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/TopHeader.phtml:17
+msgid "Welcome"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/TopHeader.phtml:36
+msgid "Last signed in"
+msgstr ""
+
+#: kortingscode/application/modules/admin/layouts/scripts/TopHeader.phtml:36
+msgid "Logout"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/addaffiliate.phtml:3
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:40
+msgid "Create network"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/addaffiliate.phtml:10
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:25
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:48
+msgid "Name"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/addaffiliate.phtml:12
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:52
+msgid "Validation Text"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/addaffiliate.phtml:13
+msgid "centerparks"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/addaffiliate.phtml:22
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:62
+msgid "CREATE NETWORK"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:10
+msgid "Affiliate Networks"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:11
+msgid "Add new network"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:15
+msgid "Search"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:26
+msgid "Online"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/affiliate/index.phtml:63
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:84
+msgid "CANCEL"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/forgotpassword.phtml:11
+msgid "Forgot password?"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/forgotpassword.phtml:23
+msgid "REQUEST NEW PASSWORD"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/forgotpassword.phtml:24
+msgid "Back"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/index.phtml:12
+msgid "CMS LOGIN"
+msgstr "Test KR"
+
+#: kortingscode/application/modules/admin/views/scripts/auth/index.phtml:21
+msgid "Username"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/index.phtml:25
+msgid "Password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/index.phtml:29
+msgid "LOGIN"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/index.phtml:30
+msgid "Forgot Password?"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/pwdresetsuccessfully.phtml:6
+msgid "Check your email address for a new password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/auth/pwdresetsuccessfully.phtml:8
+msgid "BACK TO LOGIN"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:23
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:26
+msgid "Title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:30
+msgid "Permalink"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:42
+msgid "Meta Description"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:53
+msgid "Category Icon"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:55
+msgid "160px * 160px"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:63
+msgid "Description"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/addcategory.phtml:81
+msgid "CREATE CATEGORY"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/editCategory.phtml:16
+msgid "Edit category"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/editCategory.phtml:26
+msgid "Edit Title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/editCategory.phtml:75
+msgid "UPDATE CATEGORY"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/editCategory.phtml:80
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:305
+msgid "DELETE"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/index.phtml:17
+msgid "Add New Category"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/index.phtml:41
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:183
+msgid "Category"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/category/index.phtml:43
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:24
+#: kortingscode/application/modules/admin/views/scripts/user/trash.phtml:41
+msgid "Delete"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/emaillightbox/index.phtml:29
+msgid "Active"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/emaillightbox/index.phtml:32
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:223
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:251
+msgid "On"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/emaillightbox/index.phtml:33
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:224
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:252
+msgid "Off"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/emaillightbox/index.phtml:44
+msgid "Subscribe now.."
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/footer/index.phtml:23
+msgid "Top footer"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/footer/index.phtml:30
+msgid "Column1"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/footer/index.phtml:39
+msgid "Column2"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/footer/index.phtml:48
+msgid "Column3"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/footer/index.phtml:57
+msgid "Column4"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/footer/index.phtml:66
+msgid "Bottom footer"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/footer/index.phtml:80
+msgid "EDIT FOOTER"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:9
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:41
+msgid "Keyword"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:11
+msgid "Add Excluded Keywords"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:15
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:25
+msgid "Export List"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:21
+msgid "Excluded keywords"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:22
+msgid "Redirect to"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:23
+msgid "Created"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:34
+msgid "Exclude keyword from searchbar"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:48
+msgid "Redirect To"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/searchbar/index.phtml:61
+msgid "CREATE"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:26
+msgid "Add New Shop"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:26
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:23
+#: kortingscode/application/modules/admin/views/scripts/user/trash.phtml:4
+msgid "Trash"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:49
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:47
+#: kortingscode/application/modules/admin/views/scripts/user/trash.phtml:35
+msgid "Id"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:50
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:79
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:83
+msgid "Shop Name"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:51
+msgid "Money Shop"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:52
+msgid "Account manager"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:53
+msgid "Start"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:54
+msgid "Network"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:56
+msgid "Offline since"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:57
+msgid "Delete permanently"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:73
+msgid "Create Shop"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:73
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:61
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:20
+msgid "Cancel"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:88
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:93
+msgid "Navigational URL"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:113
+msgid "Shop Title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:121
+msgid "Sub-title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:126
+msgid "Shop Sub-Title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:139
+msgid "Notes"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:144
+msgid "Short note about the shop"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:150
+msgid "Account Manager"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:155
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:170
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:207
+msgid "None"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:165
+msgid "Editor"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:202
+msgid "Affiliate network"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:221
+msgid "Deeplinking code"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:227
+msgid "Deeplink URL"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:230
+msgid "Ref URL (no http)"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:234
+msgid "Ref URL"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:239
+msgid "Actual URL (no http)"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:243
+msgid "Actual URL"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:248
+msgid "Money shop"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:261
+msgid "Overwrite title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:265
+msgid "Overwrite Title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:270
+msgid "Overwrite subtitle"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:274
+msgid "Overwrite SubTitle"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:279
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:283
+msgid "Overwrite browser title"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:290
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:295
+msgid "Upload Logo"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:299
+msgid "200*150 px (.jpg or .png)"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:305
+msgid "Shoptext"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:309
+msgid "Small description about the shop."
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:319
+msgid "Views"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:331
+msgid "Add a 'How to use the code'"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:334
+msgid "Yes"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:335
+msgid "No"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:344
+msgid "Upload main image lightbox"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:349
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:365
+msgid "Choose Image"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:354
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:368
+msgid ".jpg or .png"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:359
+msgid "Upload second image lightbox"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:373
+msgid "Select how to use page"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:378
+msgid "Select"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/shop/index.phtml:403
+msgid "PUBLISH SHOP"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/template/template.phtml:3
+msgid "Hi"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/template/template.phtml:4
+msgid "Your password has been reset as per your request on our website"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/template/template.phtml:5
+msgid "Your new password is:"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/template/template.phtml:7
+msgid "Regards"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/template/template.phtml:7
+msgid "Kortingscode Team"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:2
+msgid "User"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:23
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:61
+msgid "Add New User"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:49
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:71
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:74
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:191
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:194
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:30
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:33
+#: kortingscode/application/modules/admin/views/scripts/user/trash.phtml:37
+msgid "Email"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:50
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:114
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:213
+#: kortingscode/application/modules/admin/views/scripts/user/trash.phtml:38
+msgid "Role"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:51
+#: kortingscode/application/modules/admin/views/scripts/user/trash.phtml:39
+msgid "Entries"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:80
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:83
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:198
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:201
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:37
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:40
+msgid "First Name"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:89
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:92
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:205
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:208
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:44
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:47
+msgid "Last Name"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:107
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:110
+msgid "Re-type Password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:133
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:233
+msgid "Access to website"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:142
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:243
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:53
+msgid "Upload Avatar"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:145
+msgid "132px * 95px"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:152
+msgid "Choose Avatar"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:171
+msgid "CREATE PROFILE"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:179
+msgid "Edit User"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:248
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:69
+msgid "Change Avatar"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:264
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:111
+msgid "Change Password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:271
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:274
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:120
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:123
+msgid "Old Password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:278
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:281
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:127
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:130
+msgid "New Password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:285
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:289
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:134
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:137
+msgid "Re-type New Password"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/index.phtml:303
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:151
+msgid "EDIT PROFILE"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:3
+msgid "Profile"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/profile.phtml:20
+msgid "Edit Profile"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/user/trash.phtml:40
+msgid "Restore"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/widget/index.phtml:36
+#: kortingscode/application/modules/admin/views/scripts/widget/index.phtml:70
+msgid "Create Widget"
+msgstr ""
+
+#: kortingscode/application/modules/admin/views/scripts/widget/index.phtml:59
+#: kortingscode/application/modules/admin/views/scripts/widget/index.phtml:93
+msgid "CREATE WIDGET"
+msgstr ""
+
+#: kortingscode/public/js/test.js:5
+msgid "PONGA TESTING"
+msgstr ""
+
+#: kortingscode/public/js/back_end/login.js:45
+#, fuzzy
+msgid "Enter your Username"
+msgstr "ddfg"
+
+#: kortingscode/public/js/back_end/login.js:46
+#, fuzzy
+msgid "Enter your password"
+msgstr "gdfg"
+
+#: kortingscode/public/js/back_end/login.js:47
+msgid "Enter your Username/E-mail Address"
+msgstr "fgdfg"
+
+#: kortingscode/public/jsgettext/test.js:6
+msgid "Hello world, testing jsgettext"
+msgstr ""
+
+#: kortingscode/public/jsgettext/test.js:11
+msgid "string 2: double quotes"
+msgstr ""
+
+#: kortingscode/public/jsgettext/test.js:12
+msgid "/* comment in string */"
+msgstr ""
+
+#: kortingscode/public/jsgettext/test.js:13
+msgid "regexp in string: /[a-z]+/i"
+msgstr ""
+
+#: kortingscode/public/jsgettext/test.js:14
+msgid "another function"
+msgstr ""
+
+#: kortingscode/public/jsgettext/test.js:17
+msgid "string 2: \"escaped double quotes\""
+msgstr ""
+
+#: kortingscode/public/jsgettext/test.js:20
+msgid "Test by kuldeep"
+msgstr ""
+
+#~ msgid "Please enter your Username."
+#~ msgstr "test in other laguage username"
+
+#~ msgid "Please enter valid Username."
+#~ msgstr "test in other laguage username "
+
+#~ msgid "Please enter your  password."
+#~ msgstr "test in other laguage pwd "
+
+#~ msgid "Please enter minimum 8 characters"
+#~ msgstr "test in other laguage pwd max length"
+
+#~ msgid "Please enter your Username/E-mail Address."
+#~ msgstr "test in other laguage email address"
+
+#~ msgid "Please enter valid Username/E-mail Address."
+#~ msgstr "test in other laguage user name"
