@@ -195,9 +195,10 @@ ul.ul-disc > li, ul.ul-square > li, ol.ol-decimal > li {
 	height:112px;	
 }
 .admin-sidebar-headings{
-	background:#f1f1f1 url(../../images/back_end/sidebar-border.png) repeat-x bottom;
+	/*background:#f1f1f1 url(../../images/back_end/sidebar-border.png) repeat-x bottom;*/
+	background:#34495E  repeat-x bottom;
 	height:55px;
-	color:#474747;
+	color:#ffffff;
 	float:left;
 	width:198px;
 	padding:0 0 0 12px;
@@ -1157,8 +1158,8 @@ display:block;
 }
 
 #adminmenu li.imbull-menu-open {
-    border-style: solid;
-    border-width: 0 0 1px;
+    /*border-style: solid;
+    border-width: 0 0 1px;*/
 }
 #adminmenu .imbull-submenu ul {
     padding: 4px 0;

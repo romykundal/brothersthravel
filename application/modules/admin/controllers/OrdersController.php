@@ -57,32 +57,30 @@ class Admin_OrdersController extends Zend_Controller_Action
     	exit();
     } 
     
-  
-    
-    
-        
     /*
-     * Function use for edit bad words
-     * 
-     * 
+     * Function use for edit
      */
-    public function editproductAction()
+    public function editAction()
     {
  
     	$id = intval($this->getRequest()->getParam('id'));
     	$params = $this->_getAllParams();
-    	
+            
     	if(intval($id) > 0 )
     	{
-    		$data = Unsafwords::updateWords($id);
-    		$this->view->dataWords = $data ;
+    		$data = Inquiries::getOrderDetails($id);
+    		$this->view->productdata = $data ;
     		$this->view->id = $id;
+/*echo "<pre>" ;
+print_r($data);
+die;    */
     	}
     	
     	if ($this->_request->isPost())
     	{
-    		// $w = Doctrine_Core::getTable("Unsafwords")->find($params['id']);
-    		$words= Unsafwords :: editword($params);
+    		$w = Doctrine_Core::getTable("Inquiries")->find($params['id']);
+    		$words= $w->updateInquiry($params);
+
     		$flash = $this->_helper->getHelper('FlashMessenger');
     		if($words)
     		{

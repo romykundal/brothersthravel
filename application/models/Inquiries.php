@@ -33,7 +33,7 @@ class Inquiries extends BaseInquiries
 		
 		return Zend_Json::encode(DataTable_Helper::generateDataTableResponse($data, 
 				$params, 
-				array("__identifier" => 'g.name', 'g.phoneNumber', 'g.desination', 'g.travelDate', 'g.travelDate', 'g.created_at','g.updated_at'),
+				array("__identifier" => 'g.name', 'g.phoneNumber', 'g.departure', 'g.arrival', 'g.departureDate', 'g.returnDate', 'g.travelType', 'g.departureTime', 'g.returnTime', 'g.created_at','g.updated_at'),
 						array(),
 						array()
 				));
@@ -67,6 +67,31 @@ class Inquiries extends BaseInquiries
 		  
 		return $lid ;
 	}
+
+
+		function updateInquiry($params){
+			
+		$this->pageTitle = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pageTitle']);
+		$this->metaTitle = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pagemetaTitle']);
+		$this->metaDescription = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pagemetaDesc']);
+		$this->content = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pageDesc']);
+		
+		$pageid = @$params['pageId'];
+		
+		try{
+		//call cache function
+			$page = $this->save();
+			$pageId =  $this->id;
+		
+			return true;
+		}catch (Exception $e){
+			return false;
+		}
+		
+		
+			
+	}
+
 	
 	/**
 	 * get to five category
@@ -78,7 +103,7 @@ class Inquiries extends BaseInquiries
 	public static function searchProduct($keyword) {
 	
 		$data = Doctrine_Query::create()->select('g.title as name')
-		->from("product g")
+		->from("inquiries g")
 		->where('g.deleted = 0')
 		->andWhere("g.title LIKE ?", "%$keyword%")
 		->orderBy("g.title ASC")
@@ -95,7 +120,7 @@ class Inquiries extends BaseInquiries
 	 * @version 1.0
 	 */
 	public static function deleteProduct($id) {
-		$q = Doctrine_Query::create()->update('product g')
+		$q = Doctrine_Query::create()->update('inquiries g')
 		->set('g.deleted', 1)
 		->where('g.id=?', $id)
 		->execute();
@@ -104,7 +129,7 @@ class Inquiries extends BaseInquiries
 	}
 	
 	/**
-	 * Author  Raman
+	 * Author  Rohit
 	 * @param integer $catId
 	 * return Array
 	 * Version 1.0
@@ -114,7 +139,7 @@ class Inquiries extends BaseInquiries
 	
 		$data = Doctrine_Query::create()
 		->select('g.*, cat.name,cat.description')
-		->from('product g')
+		->from('inquiries g')
 		// ->leftJoin('g.Image img')
 		->leftJoin('g.Category cat')
 		->where('g.categoryid=?', $catId)
@@ -124,5 +149,17 @@ class Inquiries extends BaseInquiries
 		->fetchArray();
 		return $data;
 	}
+
+	public static function getOrderDetails($oId){
+	
+		$data = Doctrine_Query::create()
+		->select('g.*')
+		->from('inquiries g')
+		->where('g.id=?', $oId)
+		->fetchOne(null , Doctrine::HYDRATE_ARRAY);
+		return $data;
+	}
+
+
 	
 }

@@ -75,7 +75,10 @@ abstract class BaseUser extends Doctrine_Record
         		'length' => 255,
         
         ));
-        	 
+        $this->hasColumn('status', 'integer', 1, array(
+                'type' => 'integer',
+                'length' => 1,        
+        ));
         $this->hasColumn('roleId', 'integer', 20, array(
              'type' => 'integer',
              'comment' => 'FK to role.id',

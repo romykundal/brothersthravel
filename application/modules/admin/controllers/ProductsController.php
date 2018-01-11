@@ -106,64 +106,59 @@ class Admin_ProductsController extends Zend_Controller_Action
  
     	$id = intval($this->getRequest()->getParam('id'));
     	$params = $this->_getAllParams();
-    	
+    	$uploadPath = HTTP_PATH."public/images/upload/products/";
+      
     	if(intval($id) > 0 )
     	{
-
-    		
-    		$getcatg = Category::getCategories();
-    		$this->view->catg = $getcatg;
-    		 
     		$data = Products::getproduct($id);
-    		
+        $this->view->catg = array('Hot Deal','Top Deal', 'Popular Deal', 'Deals' ) ;  
     		$rslt = @$data[0];
     		$this->view->productdata = @$rslt ;
-    		$userPicture =array();
-    		$i = 0;
-    		foreach ($rslt["images"] as $imgs){
-    		
-	    		
-	    		if(isset($imgs['type']) && $imgs['type']=='IMGPROCD' && isset($imgs['name']) && $imgs['name']!='')
-	    		{
-	    			if(file_exists(ROOT_PATH.$imgs['path'].$imgs['name']))
-	    			{
-	    				$userPicture[$i]["url"] = PUBLIC_PATH . $imgs['path'].'thum_'.$imgs['name'];
-	    				$userPicture[$i]["image"] = $imgs['name'];
-	    				$userPicture[$i]["id"] = $imgs['id'];
-	    				 
-	    			}
-	    		}
-    		$i++;
-    		
-    		}
-    		
-    		
-    		
-    		$this->view->imgprodct = $userPicture;
+    		if($rslt["image"]){
+    		  $this->view->imgprodct = $uploadPath.'thumb/thum_'.$rslt["image"];
+        }
     		$this->view->id = $id;
     	}
     	
     	if ($this->_request->isPost())
     	{
-    		
+	
     		$ImgName = array();
     		if (count($_FILES["image"]["name"])>0  && @$_FILES["image"]["name"][0] != "")
     		{
+         /*echo $rslt["image"];
+            echo "<pre>";
+    print_r($params);
+    print_r($_FILES);
+    die("**********787887878787877***************************");*/
+      if($rslt["image"]){
+      $delrootpath = ROOT_PATH."images/upload/products/".$rslt["image"];
+      $delthumrootpath = ROOT_PATH."images/upload/products/thumb/thum_".$rslt["image"];
+      $delmidrootpath = ROOT_PATH."images/upload/products/medium/thum_medium_".$rslt["image"];
+      
+        @unlink($delrootpath);
+        @unlink($delthumrootpath);
+        @unlink($delmidrootpath);
+      }
+
     			$uploadPath = "images/upload/products/";
     		
     			foreach ( $_FILES['image']['name'] as $key => $val ) {
     				 
-    				$ImgName[]=self::upload($key.$_FILES['image']['name'][$key]);
-    		
-    				$originalpath = ROOT_PATH. $uploadPath . $ImgName[$key];
-    		
-    				//call function resize image
-    				$thumbpath = ROOT_PATH . $uploadPath . "thum_" . $ImgName[$key];
-    				BackEnd_Helper_viewHelper::romyresizeImage($originalpath, 100, 85, $thumbpath,$_FILES['image']['type'][$key]);
-    		
-    				//call function resize image
-    				$mediumpath = ROOT_PATH . $uploadPath . "thum_medium_" . $ImgName[$key];
-    				BackEnd_Helper_viewHelper::romyresizeImage($originalpath, 415,275, $mediumpath,$_FILES['image']['type'][$key]);
+
+            $ImgName[]=self::upload($key.$_FILES['image']['name'][$key]);
+            
+            $originalpath = ROOT_PATH. $uploadPath . $ImgName[$key];
+          /*  print_r($_FILES);
+       die;*/
+            //call function resize image
+            $thumbpath = ROOT_PATH . $uploadPath .'thumb/'. "thum_" . $ImgName[$key];
+            BackEnd_Helper_viewHelper::romyresizeImage($originalpath, 100, 65, $thumbpath,$_FILES['image']['type'][$key]);
+            
+            //call function resize image
+            $mediumpath = ROOT_PATH . $uploadPath .'medium/'. "thum_medium_" . $ImgName[$key];
+            BackEnd_Helper_viewHelper::romyresizeImage($originalpath, 415,275, $mediumpath,$_FILES['image']['type'][$key]);
+
     			}
     		}    		
 
@@ -194,7 +189,7 @@ class Admin_ProductsController extends Zend_Controller_Action
     	$imagename = $this->getRequest()->getParam('imagename');
     	$delrootpath = ROOT_PATH."images/upload/products/".$imagename;
     	$delthumrootpath = ROOT_PATH."images/upload/products/thum_".$imagename;
-    	$delmidrootpath = ROOT_PATH."images/upload/products/thum_medium_".$imagename;
+    	$delmidrootpath = ROOT_PATH."images/upload/products/medium/thum_medium_".$imagename;
     	$result = Image::deleteImg( $id );
     	if($result){
 		    	
@@ -226,19 +221,14 @@ class Admin_ProductsController extends Zend_Controller_Action
     	
     	$details = Products::getproduct($id);
     	
-    	Image::deleteProductImg($id);
     	$result = Products::deleteProduct($id);
     	
-    	if($result){
-    		foreach ($details[0]["images"] as $imgs){
+    	if($details[0]){
     		
-    			@unlink(ROOT_PATH."images/upload/products/".$imgs["name"]);
-    			@unlink(ROOT_PATH."images/upload/products/thum_".$imgs["name"]);
-    			@unlink(ROOT_PATH."images/upload/products/thum_medium_".$imgs["name"]);
+    			@unlink(ROOT_PATH."images/upload/products/".$details[0]["image"]);
+    			@unlink(ROOT_PATH."images/upload/products/thumb/thum_".$details[0]["image"]);
+    			@unlink(ROOT_PATH."images/upload/products/medium/thum_medium_".$details[0]["image"]);
     			 
-    		}    		 
-
-    		
     		echo Zend_Json::encode(true);
     	}else{
     		echo Zend_Json::encode(false);
@@ -251,7 +241,8 @@ class Admin_ProductsController extends Zend_Controller_Action
     public function addproductAction()
     {
     	$params = $this->getRequest()->getParams();
-
+/*echo "<pre>";
+print_r($params);*/
     	if ($this->getRequest()->isPost()){
     		// $ownerId =  Auth_StaffAdapter::hasIdentity();
 			
@@ -267,14 +258,14 @@ class Admin_ProductsController extends Zend_Controller_Action
 	    			$ImgName[]=self::upload($key.$_FILES['image']['name'][$key]);
 	    			
 	    			$originalpath = ROOT_PATH. $uploadPath . $ImgName[$key];
-	    			print_r($_FILES);
-       die;
+	    		/*	print_r($_FILES);
+       die;*/
 	    			//call function resize image
-	    			$thumbpath = ROOT_PATH . $uploadPath . "thum_" . $ImgName[$key];
+	    			$thumbpath = ROOT_PATH . $uploadPath .'thumb/'. "thum_" . $ImgName[$key];
 	    			BackEnd_Helper_viewHelper::romyresizeImage($originalpath, 100, 65, $thumbpath,$_FILES['image']['type'][$key]);
 	    			
 	    			//call function resize image
-	    			$mediumpath = ROOT_PATH . $uploadPath . "thum_medium_" . $ImgName[$key];
+	    			$mediumpath = ROOT_PATH . $uploadPath .'medium/'. "thum_medium_" . $ImgName[$key];
 	    			BackEnd_Helper_viewHelper::romyresizeImage($originalpath, 415,275, $mediumpath,$_FILES['image']['type'][$key]);
 	    		}
     		}
@@ -286,15 +277,11 @@ class Admin_ProductsController extends Zend_Controller_Action
     			$flash = $this->_helper->getHelper('FlashMessenger');
     			$message = $this->view->translate('Record has been saved successfully.');
     			$flash->addMessage(array('success' => $message ));
-    			return   $this->_redirect(HTTP_PATH.'admin/products/index');
-    			 
+    			return   $this->_redirect(HTTP_PATH.'admin/products/index');	 
     		}
     	}
-    	
-    	$getcatg = Category::getCategories();
-    	$this->view->catg = $getcatg;	
-    	
-    	
+
+    	$this->view->catg = array('Hot Deal','Top Deal', 'Popular Deal', 'Deals' ) ;	
     }
     
     public function searchkeyAction(){
@@ -304,7 +291,7 @@ class Admin_ProductsController extends Zend_Controller_Action
     	$ar = array();
     	if (sizeof($data) > 0) {
     		foreach ($data as $d) {
-    			$ar[] = ucfirst($d['name']);
+    			$ar[] = ucfirst($d['title']);
     		}
     	}
     	else{

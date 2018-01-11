@@ -162,16 +162,16 @@ function init() {
 		$('#metaTextLeft').val("Characters Left: "+data.left);
 	});*/
 	
-	manageWidgets();
+	//manageWidgets();
 	
-	$('#publishDate').datepicker({'startDate': 'today','autoclose':true,'format': 'dd-mm-yyyy'});
-	$('#publishTimehh').timepicker({
+	//$('#publishDate').datepicker({'startDate': 'today','autoclose':true,'format': 'dd-mm-yyyy'});
+	/*$('#publishTimehh').timepicker({
 	 	minuteStep: 1,
         template: 'modal',
         showSeconds: false,
         showMeridian: false,
         'afterUpdate'  : validatePublishdate
-    });
+    });*/
    
 	 CKEDITOR.replace( 'pageDesc',
 				{
@@ -185,7 +185,7 @@ function init() {
 
 	//CKEDITOR.replace( 'pageDesc' );
 	 
-	 $('#publishDate').datepicker().on('changeDate' , validatePublishdate);
+	// $('#publishDate').datepicker().on('changeDate' , validatePublishdate);
 	 
 	 $("#maxOffer").keydown(function(event) {
 		   if(event.shiftKey)

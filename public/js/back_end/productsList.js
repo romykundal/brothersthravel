@@ -69,7 +69,7 @@ var focusRules = {
 					Title : {
 						required : true,
 						//regex : /\s/g,
-						regex : /^[A-Za-z ]\w+$/						
+						//regex : /^[A-Za-z ]\w+$/						
 					},
 					Model : {
 						required : true,
@@ -88,7 +88,7 @@ var focusRules = {
 					},
 					Title : {
 						required : "Please Enter Title",
-						regex : "Space and one character not allowed"
+						//regex : "Space and one character not allowed"
 						
 					},
 					Model : {
@@ -207,7 +207,31 @@ var focusRules = {
 						               {
 								
 											"fnRender" : function(obj) {
-												return title  = obj.aData.name ;
+											var imgSrc = "";
+									          if (obj.aData.image == null || obj.aData.image=='' || obj.aData.image==undefined) {
+
+									             imgSrc = HOST_PATH_PUBLIC
+									             + "/images/back_end/user-avtar.jpg";
+									              
+									          } else {
+
+									           var image = "thum_" + obj.aData.image;
+									           imgSrc = HOST_PATH_PUBLIC +'images/upload/products/thumb/'+ image;
+
+									          }
+									          var html = "<img id='prod_img' src='"
+									            + imgSrc
+									            + "'/>" ;
+									          return html;
+									          
+											},
+											"bSortable" : false
+											
+										},
+						               {
+								
+											"fnRender" : function(obj) {
+												return title  = obj.aData.title ;
 									
 											},
 											"bSortable" : false
@@ -216,7 +240,7 @@ var focusRules = {
 										 {
 											
 											"fnRender" : function(obj) {
-												return title  = obj.aData.catname ;
+												return title  = obj.aData.category ;
 									
 											},
 											"bSortable" : false
@@ -225,7 +249,7 @@ var focusRules = {
 										 {
 											
 											"fnRender" : function(obj) {
-												return title  = obj.aData.quantity ;
+												return title  = obj.aData.price ;
 									
 											},
 											"bSortable" : false

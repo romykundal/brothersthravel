@@ -206,46 +206,44 @@ var focusRules = {
 										},
 										{
 										"fnRender" : function(obj) {
-											return title  = obj.aData.travelDate ;
+											return depDate  = obj.aData.departureDate +' '+ obj.aData.departureTime ;
 								
 										},
 										"bSortable" : false		
 										},
 										{
 										"fnRender" : function(obj) {
-											return title  = obj.aData.returnDate ;
+											return returnDate  = obj.aData.returnDate +' '+ obj.aData.returnTime;
 											},
 											"bSortable" : false		
 										},
 										{
 										"fnRender" : function(obj) {
-											return title  = obj.aData.desination ;
+											return title  = obj.aData.departure ;
 											},
 											"bSortable" : false		
 										},
 										{
 										"fnRender" : function(obj) {
-											return title  = obj.aData.pickup_location ;
+											return title  = obj.aData.arrival ;
 											},
 											"bSortable" : false		
 										},
-										 {
-											
-											"fnRender" : function(obj) {
-												return price  = obj.aData.address ;
-											},
-											"bSortable" : false
-										},
-										{
-											
+										{	
 											"fnRender" : function(obj) {
 												return price  = obj.aData.catg_name ;
 											},
 											"bSortable" : false
 										},
+										{	
+											"fnRender" : function(obj) {
+												return price  = obj.aData.travelType ;
+											},
+											"bSortable" : false
+										},
 										 {
 											"fnRender" : function(obj) {
-												return price  = obj.aData. 	quantity_member ;
+												return price  = obj.aData.members ;
 											},
 											"bSortable" : false
 										},
@@ -262,18 +260,18 @@ var focusRules = {
 //												"bSearchable" : false,
 //												"bSortable" : false
 //
-//											}, 
-					/*	{
+//										}, 
+						{
 								"fnRender" : function(obj) {
 
-								  var del = "<a href='javascript:void(0);' id='View' onClick='deleterecd(" + obj.aData. id +");' >View Details</a>";
+								  var del = "<a href='javascript:void(0);' id='View' onClick='callToEdit(" + obj.aData. id +");' >Edit Details</a>";
 		                             return  del;
 
 								},
 								"bSearchable" : false,
 								"bSortable" : false
 
-							} */
+							} 
 						
 						],	
 						"fnInitComplete" : function(obj) {
@@ -313,7 +311,7 @@ var focusRules = {
 		function callToView(id)
 		{
 			 
-			document.location.href =  HOST_PATH+"admin/spot/index/rId/"+id;
+			document.location.href =  HOST_PATH+"admin/orders/view/id/"+id;
 			
 		}
 		
@@ -321,7 +319,7 @@ var focusRules = {
 	
 		function callToEdit(id)
 			{
-			document.location.href =  HOST_PATH+"admin/products/editword/id/" + id ;
+			document.location.href =  HOST_PATH+"admin/orders/edit/id/" + id ;
 			
 			}
 			

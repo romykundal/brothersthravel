@@ -27,12 +27,6 @@ class Admin_UserController extends Zend_Controller_Action
     public function indexAction()
     {
     	
-    	$u = Auth_StaffAdapter::getIdentity();
-    	
-		$this->view->id = $u->id;
-		$this->view->role = $u->roleId;
-		$this->view->roles = Role::createUserPermission($u->roleId);
-		
 		//get flashes
 		$flash = $this->_helper->getHelper('FlashMessenger');
 		$message = $flash->getMessages();
@@ -280,22 +274,11 @@ class Admin_UserController extends Zend_Controller_Action
 
 			$u = Doctrine_Core::getTable("User")->find($id);
 			
-			$fbfrnddel = Doctrine_Query::create()->delete()->from('Fbfriends f')
-			->where("f.userId=" . $id)->execute();
 			
-			$buyticketdel = Doctrine_Query::create()->delete()->from('Buyertickets b')
-			->where("b.buyeruserId=" . $id)->execute();
-			
-			$sellticketdel = Doctrine_Query::create()->delete()->from('Sellertickets s')
-			->where("s.selleruserId=" . $id)->execute();
 			
 			$del = Doctrine_Query::create()->delete()->from('User u')
 					->where("u.id=" . $id)->execute();
-			if( (intval($u->profileImageId)) > 0)
-			{
-				$del2 = Doctrine_Query::create()->delete()->from('ProfileImage i')
-					->where("i.id=" . $u->profileImageId)->execute();
-			}
+			
 
 		} else {
 

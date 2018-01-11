@@ -14,7 +14,7 @@ function AddFile()
 {
 	++imageCount;
 	var div = document.createElement('DIV');
-	div.innerHTML ='<input id="image[]" name="image[]" type="file" style="margin-bottom:10px;" /> <a  onclick="RemoveFile(this);"> Remove </a> ';
+	div.innerHTML ='<input id="image[]" name="image[]" type="file" /> <a  onclick="RemoveFile(this);"> Remove </a> ';
 	//div.innerHTML ='<tr><td height="40" align="right"><h5>Image /h5></td><td height="40">&nbsp;</td><td height="40" align="left"><label><input id="image[]" name="image[]" type="file" /> <a  onclick="RemoveFile(this);"> Remove </a> </label></td></tr>';  
 	document.getElementById("divFile").appendChild(div);
 		if(imageCount==MaxImage){
@@ -62,7 +62,6 @@ var validatorAddUser = null;
 $(document).ready(function() {
 	 				$(":input").attr("autocomplete","off");
 					//Get Role for Filter
-					getRoles();
 					//auto complete
 					//if press enter key the call search offer function
 					$("input#tags").keypress(function(e)
@@ -70,7 +69,7 @@ $(document).ready(function() {
 					   // if the key pressed is the enter key
 						if (e.which == 13)
 						{
-							getUserList($("input#tags").val(),undefined);
+							getUserList($("input#tags").val());
 					    }
 					});
 					$("#tags").autocomplete({
@@ -103,17 +102,16 @@ $(document).ready(function() {
                     }
                 });
 			    //function call when 
-	 			$('#selectRole').change(searchFilterForDrp);
 				$(".multiselect").multiselect();
 				initializeSettingForEdit();
 				// validate form ss
 					validateFormAddNewUser();
 						
-						getUserList(undefined,undefined);
+						getUserList(undefined);
 						//getWebsite();//getwebsite of logged user	
 						
 						//add code by kuldeep according to new changes in user module 
-						$('#deleteOne').click(deleteOne);
+						//$('#deleteOne').click(deleteOne);
 						//$('#addNewStore').click(addNewStore);
 						//auto complete for shop search from database and get to ten best search store
 						//var shopIds=[];
@@ -152,7 +150,7 @@ $(document).ready(function() {
 					       
 					    }); 
 						//code for selection of li
-						$('ul#favoriteStore li').click(changeSelectedClass);
+						//$('ul#favoriteStore li').click(changeSelectedClass);
 
 						//end code 	
 						
@@ -590,131 +588,6 @@ jQuery.fn.multiselect = function() {
 
 
 /**
- * Get roles from database and display in role filter
- * @author kraj
- */
-function getRoles()
-{
-	$.ajax({
-		type : "POST",
-		url : HOST_PATH + "admin/user/getroles",
-		dataType : 'json',
-		success : function(data) {
-			
-			_roles = data;
-			CreateSelect();
-			
-        }
-			
-		});
-
-}
-/**
- * Get website according to access permission of Admin user mean current logged
- * user
- * @author kraj
- */
-function getWebsite() {
-	
-	
-	// check load event called in edit mode or not
-	var hashString = window.location.hash;
-	hashString = hashString.substr(1);
-	
-		
-		
-	var isEdit = false  ;
-	var regex =  /(^.+)-([\d]+$)/ ;
-	
-	var result = regex.exec(hashString);
-	isEdit  =  result && result[2] ? true : false ;
-	
-	
-	
-	if (_websiteAccess == null) {
-
-		if(! isEdit )
-		{
-		//addOverLay();
-		}
-		var roleid = $('input#roleId').val();
-		var userid = $('input#userId').val();
-				$.ajax({
-					type : "POST",
-					url : HOST_PATH + "admin/user/getwebsite/id/" + userid
-							+ "/rolid/" + roleid,
-					dataType : 'json',
-					success : function(data) {
-						var op = "<ul>";
-						if (data != null) {
-							_websiteAccess = data;
-							$('div.multiselect').empty();
-							for (i in _websiteAccess) {
-
-								
-								op += "<li class= list_"+ i + "><input  type='checkbox' style='display:none' name='websites[]"
-										+ "' value='"
-										+ i
-										+ "' /> &nbsp"
-										+ _websiteAccess[i] + "</li>";
-							}
-							op += "</ul>";
-							$('div.multiselect').append(op);
-							$('div.multiselect ul li').click(
-									selectWebSiteInList);
-							
-							if(! isEdit )
-							{
-								//removeOverLay();
-							}
-							
-							if($('#websiteaccess')){
-								highlightExistingWebsites($('#websiteaccess').val());	
-							}
-						}
-					}
-				});
-		// get from website access
-	} else {
-		var op = "<ul>";
-		if (_websiteAccess != null) {
-			$('div.multiselect').empty();
-			for (i in _websiteAccess) {
-
-				op += "<li class= list_"+ i + "><input  type='checkbox' style='display:none' name='websites[]"
-						+ "' value='"
-						+ i
-						+ "' /> &nbsp"
-						+ _websiteAccess[i] + "</li>";
-			}
-			op += "</ul>";
-			$('div.multiselect').append(op);
-			$('div.multiselect ul li').click(selectWebSiteInList);
-		}
-	}
-	
-	
-}
-/**
- * When admin select website for user then selected class apply on selected list
- * in websiet multiselect then use this function
- * @author kraj
- */
-function selectWebSiteInList() {
-
-	if (($(this).children('input')).is(':checked')) {
-
-		$(this).children('input').removeAttr('checked');
-		$(this).removeClass('selected');
-
-	} else {
-
-		$(this).children('input').attr('checked', 'checked');
-		$(this).addClass('selected');
-	}
-}
-
-/**
  * Convert First character of the user in Capital letter
  * @author kraj
  */
@@ -726,7 +599,7 @@ function ucfirst(str) {
  * Get user list from database and show in dataTable
  * @author kraj
  */
-function getUserList(searchtext,role) {
+function getUserList(searchtext) {
 	//addOverLay();
     $("ul.ui-autocomplete").css('display','none');
 	if(searchtext==undefined)
@@ -747,80 +620,47 @@ function getUserList(searchtext,role) {
 						"iDisplayLength" : 10,
 						"aaSorting": [[ 1, 'ASC' ]], 
 						"sPaginationType" : "bootstrap",
-						"sAjaxSource" : HOST_PATH + "admin/user/getuserlist/searchtext/" + searchtext + "/role/" + role,
+						"sAjaxSource" : HOST_PATH + "admin/user/getuserlist/searchtext/" + searchtext,
 						"aoColumns" : [
-								{
-									"fnRender" : function(obj) {
-								         var id=null;
-										return id = obj.aData.id;
-							
-									},
-									"bSortable" : false,
-									"sType": 'numeric'
-									
+							{
+								"fnRender" : function(obj) {
+							         var id=null;
+									return id = obj.aData.id;
+						
 								},
-								{
-									"fnRender" : function(obj) {
-										
-										var imgSrc = "";
-										
-										if (obj.aData.ppname == null || obj.aData.ppname=='' || obj.aData.ppname==undefined) {
-
-													imgSrc = HOST_PATH_PUBLIC
-													+ "/images/back_end/user-avtar.jpg";
-														
-										
-
-										} else {
-
-											var image = obj.aData.path
-													+ "thum_"
-													+ obj.aData.ppname;
-											imgSrc = HOST_PATH_PUBLIC + image;
-											
-										}
-										
-										var name = "<span class='word-wrap-username'>" + ucfirst(obj.aData.firstName) 
-												+ " "
-												+ ucfirst(obj.aData.lastName) + "</span>" ;
-										var html = "<div editId='" + obj.aData.id + "' class='grid-img'><img src='"
-												+ imgSrc
-												+ "'/></div>" +	name;
-										
-												
-										return html;
-									},
+								"bVisible":    false ,
+								"bSortable" : false,
+								"sType": 'numeric'
+								
+							},
+							{
+								"fnRender" : function(obj) {
 									
-									"bSortable" : true
+									
+									return obj.aData.firstName;
+								},
+								
+								"bSortable" : true
+
+							},
+								
+							{
+								"fnRender" : function(obj) {
+
+									return email = "<span class='word-wrap-email'>" + obj.aData.email + "</span>" ;
 
 								},
 								
-								{
-									"fnRender" : function(obj) {
+								"bSortable" : true
+							},
+							{
+								"fnRender" : function(obj) {
 
-										return email = "<span class='word-wrap-email'>" + obj.aData.email + "</span>" ;
+									return obj.aData.phoneNumber ;
 
-									},
-									
-									"bSortable" : true
-								}, {
-									
-									"fnRender" : function(obj) {
-										
-										var role1 = "";
-										
-										if(obj.aData.roleId == 2){
-											var role1= 'Seller';
-											
-										}else if(obj.aData.roleId == 3){
-											var role1= 'Buyer';
-											
-										}
-									return role =    role1 ;
-
-									},
-									//"bSearchable" : false,
-									"bSortable" : false
+								},
+								
+								"bSortable" : true
 							},
 							{
 								"fnRender" : function(obj) {
@@ -831,7 +671,7 @@ function getUserList(searchtext,role) {
 									var	onLine = '';
 									var	offLine = 'btn-primary'	;
 								}	
-									var html = "<div editId='" + obj.aData.id + "' class='btn-group'data-toggle='buttons-checkbox'style='padding-bottom:16px;margin-top:0px;'>"
+									var html = "<div editId='" + obj.aData.id + "' class='btn-group' data-toggle='buttons-checkbox'>"
 											+ "<button class='btn "+ onLine +"' onClick='changeStatus("+ obj.aData.id+",this,\"online\")'>Yes</button>"
 											+ "<button class='btn "+ offLine +"'onClick='changeStatus("+ obj.aData.id+",this,\"offline\")'>No</button>"
                                             + "</div>";
@@ -846,7 +686,7 @@ function getUserList(searchtext,role) {
 							{
 								"fnRender" : function(obj) {
 
-									  var del = "<a href='javascript:void(0);' id='delete' onClick='deleteUser(" + obj.aData. id +");' >Delete</a>";
+									  var del = "<a href='javascript:void(0);' id='delete' onClick='deleteUserr(" + obj.aData. id +");' >Delete</a>";
                                       return  del;
 
 								},
@@ -865,14 +705,14 @@ function getUserList(searchtext,role) {
 						 "fnDrawCallback": function() {
 							
 							
-							 $("tbody" , this).find('tr').each(function () {
+							 /*$("tbody" , this).find('tr').each(function () {
 							        //var $tr = $(this);
 							        //$tr.find('td').each(function() {
-							        	$(this).bind('click',callToEdit);
-							        	$(this).css( 'cursor', 'pointer' );
+							        	//$(this).bind('click',callToEdit);
+							        	//$(this).css( 'cursor', 'pointer' );
 							        	
 							       // });
-							       });
+							       });*/
 							 window.scrollTo(0, 0);
 						 },
 						"fnServerData" : function(sSource, aoData, fnCallback) {
@@ -889,16 +729,7 @@ function getUserList(searchtext,role) {
 						
 					});
 }
-/**
- * Search record from database according to role filter
- * @author kraj
- */
-function searchFilterForDrp()
-{
-	//$('#selectRole')
-	var role  =  $(this).val();
-	getUserList(undefined,role);
-}
+
 
 /**
  * Fetch editable record information and file in form
@@ -911,26 +742,7 @@ function callToEdit()
 	document.location.href =  HOST_PATH+"admin/user/edituser/id/" + id ;
 	
 }
-/**
- * create the dropdown for role filter
- * and show role in top of the grid in Drp
- * @author kraj
- */
-function CreateSelect() {
 
-	$('div.fillterDiv #selectRole').empty();
-	var r ='<option value="0"> All </option>';
-	for(var i in _roles)
-		{
-			r += '<option value="'+ _roles[i].id + '">'+ _roles[i].name +'</option>';
-	    }
-	$('div.fillterDiv #selectRole').append(r);
-	
-	var roleId = $('input#editUserroleId').val();
-	if(roleId){
-	$("select#role").val(roleId);
-	}
-}
 /**
  *  initiallize sttings for update user
  *  @author spsingh
@@ -1555,7 +1367,6 @@ function changeStatus(id,obj,status){
  * @author mkaur
  */
 function deleteUserr(id) {
-	
 	bootbox.confirm('Are you sure you want to delete this record?', function(r){
 		if(!r){
 			return false;

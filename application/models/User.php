@@ -181,7 +181,7 @@ class User extends BaseUser
     return Zend_Json::encode(
   			DataTable_Helper::generateDataTableResponse($data,
   					$params,
-  					array("__identifier" => 'u.firstName','u.email','u.created_at','u.updated_at'),
+  					array("__identifier" => 'u.firstName', 'u.phoneNumber','u.email','u.created_at','u.updated_at'),
   					array(),
   					array()
   					));

@@ -1,5 +1,5 @@
  <?php 
- $this->headTitle()->append($this->translate('Category'));
+ $this->headTitle()->append($this->translate('Airlines'));
  $role =  Zend_Auth::getInstance()->getIdentity()->roleId;
  if($role=='1' || $role=='2')
  {
@@ -23,10 +23,10 @@ $this->headScript()->appendFile ( PUBLIC_PATH . "js/back_end/categories.js" );
 <?php 
 }?> 
 </div>
-<h1><?php echo $this->translate('Menu Categories');?>
+<h1><?php echo $this->translate('Manage Airlines');?>
 	         
 	          	<button  onClick="window.location.href='<?php echo HTTP_PATH ?>admin/category/addcategory'" class="btn ml10" id="">
-	          		<?php echo $this->translate('Add New Category');?>
+	          		<?php echo $this->translate('Add New Airline');?>
 	          	</button>
 	          
           </h1>
@@ -51,9 +51,9 @@ $this->headScript()->appendFile ( PUBLIC_PATH . "js/back_end/categories.js" );
                 <thead>
 	            	<tr>
 	            	 	<th><?php echo $this->translate('id'); ?></th>
-	            	    <th><?php echo $this->translate('Category'); ?></th>
+	            	    <th><?php echo $this->translate('Name'); ?></th>
 	                    <th><?php echo $this->translate('Online'); ?></th>
-	                    <!-- <th><?php echo $this->translate('Edit'); ?></th> -->
+	                    <!-- <th><?php //echo $this->translate('Edit'); ?></th> -->
 	                
 	            	</tr>
 	        </thead>

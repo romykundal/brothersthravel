@@ -27,6 +27,9 @@ div#wordsListTable_filter
 {
 	display : none;
 }
+img#prod_img{
+	border-radius: 15px; 
+}
 </style>
 <!-- Div for user list  -->
 
@@ -51,12 +54,8 @@ div#wordsListTable_filter
                 <form class="form-search" name="searchForm" onsubmit="return false;">
 			      <div class="fl">                   
                          <input type="text" id='searchProduct' name='searchProduct' placeholder="Search product" class="span5">
-                        <button onclick="javascript:getwordsList(searchWords.value)" class="btn btn-primary">Search</button>
-                    </div>             	
-                    <!--<div class="fl ml15 fillterDiv"> 
-                      <select id='selectRole'>
-                      </select>
-                    </div> -->                         
+                        <button onclick="javascript:getwordsList(searchProduct.value)" class="btn btn-primary">Search</button>
+                    </div>
                 </form>
             
             </div>  
@@ -64,13 +63,12 @@ div#wordsListTable_filter
 		<table id="productListTable" class="table table-bordered table-striped">
 			<thead>
 	            <tr>
-	             
-	                <th ><?php echo $this->translate('Product Name'); ?></th>
-	                <th ><?php echo $this->translate('Category name'); ?></th>
-	                <th ><?php echo $this->translate('Quantity'); ?></th>
-	               <th><?php echo $this->translate('Edit');?></th>
+	            	<th ><?php echo $this->translate('Product Image'); ?></th>
+	                <th ><?php echo $this->translate('Title'); ?></th>
+	                <th ><?php echo $this->translate('Category'); ?></th>
+	                <th ><?php echo $this->translate('Price'); ?></th>
+	                <th><?php echo $this->translate('Edit');?></th>
 	                <th><?php echo $this->translate('Delete'); ?></th>
-	               
 	            </tr>
 	        </thead>
 	    </table>

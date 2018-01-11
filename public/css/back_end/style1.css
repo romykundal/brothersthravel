@@ -15,7 +15,7 @@ body, #imbullbody, .form-table .pre {
 }
 
 a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.del-link, #media-items a.delete, .plugins a.delete, .ui-tabs-nav a {
-    color: #777777;
+    color: #d4d0d0;
 }
 
 .widget, #widget-list .widget-top, .postbox, #titlediv, #poststuff .postarea, .stuffbox {
@@ -30,13 +30,13 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 }
 
 #update-nag, .update-nag {
-    background-color: #202020;
-    border-color: #E6DB55;
+    background-color: #3882BC;
+    border-color: #3882BC;
     color: #555555;
 }
 
 #adminmenuback, #adminmenuwrap {
-    background-color: #ECECEC;
+    background-color: #34495E;
     border-color: #dddddd;
 }
 #adminmenushadow, #adminmenuback {
@@ -54,7 +54,7 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #adminmenu a.menu-top, .folded #adminmenu li.menu-top, #adminmenu .imbull-submenu .imbull-submenu-head {
     border-bottom-color: #DFDFDF;
     border-top-color: #F9F9F9;
-	background:#fafafa;
+	background:#34495E;
 }
 #adminmenu .arrow-up{
 	background: #fafafa url(../../images/back_end/arrow.png) no-repeat right center !important;
@@ -105,7 +105,8 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #adminmenu li.imbull-has-current-submenu a.imbull-has-current-submenu, #adminmenu li.current a.menu-top, #adminmenu .imbull-has-current-submenu .imbull-submenu .imbull-submenu-head {
     border-bottom-color: #f5f5f5;
     border-top-color: #f5f5f5;
-    color: #219ce3;
+    color: #ffffff;
+    background-color: #34495E;
 }
 .folded #adminmenu li.imbull-has-current-submenu, .folded #adminmenu li.current.menu-top {
     border-bottom-color: #6D6D6D;
@@ -221,7 +222,8 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
     background: url("../../images/back_end/menu.png") no-repeat scroll -306px 0 transparent;
 }
 #adminmenu .menu-icon-categories:hover div.imbull-menu-image, #adminmenu .menu-icon-categories.imbull-has-current-submenu div.imbull-menu-image, #adminmenu .menu-icon-categories.current div.imbull-menu-image {
-    background: url("../../images/back_end/menu.png") no-repeat scroll -323px 0 transparent;
+    /*background: url("../../images/back_end/menu.png") no-repeat scroll -323px 0 transparent;*/
+    color: #DFDFDF
 }
 .icon16.icon-dashboard, #adminmenu .menu-icon-affilates div.imbull-menu-image {
     background: url("../../images/back_end/menu.png") no-repeat scroll -340px 0 transparent;
@@ -296,3 +298,118 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
     border-bottom-color: #DFDFDF;
 }
 
+.panel-box {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: medium none;
+    padding-top: 5px ;
+}
+    
+.panel-box .panel-icon {
+    display: table-cell;
+    padding: 29px;
+    width: 1%;
+    vertical-align: top;
+    border-radius: 0px;
+    text-align: center;
+    border-bottom: 1px solid #afaaaa2e;
+    border-top: 1px solid #afaaaa2e;
+    border-right: 1px solid #afaaaa2e;
+}
+    
+    .dashboard-stats .stat-icon {
+    line-height: 65px;
+}
+    
+
+    .bg-success {
+    background-color: #A3C86D !important;
+    color: #FFF !important;
+}
+    
+    .success-text {
+    color: #82b33a;
+}
+    
+    .bg-danger {
+    background-color: #FF7857 !important;
+    color: #FFF !important;
+}
+    
+    .danger-text {
+    color: #d15b3d;
+}
+    
+    
+    .bg-lovender {
+    background-color: #8075C4 !important;
+    color: #FFF !important;
+}
+    
+    
+    .lovender-text {
+    color: #6a5fb1;
+}
+    
+    
+
+    .bg-info {
+    background-color: #7ACBEE !important;
+    color: #FFF !important;
+}
+    
+    .info-text {
+    color: #3ca0cb;
+}
+    
+    
+    
+    
+    .size-h1 {
+    font-size: 20px;
+}
+    
+    .panel-icon p.text {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+    
+    
+    
+    .panel-icon i {
+    text-align: center;
+}
+    
+    
+    .panel-icon i {
+    text-align: center;
+}
+    
+    
+    .text-large {
+    font-size: 50px;
+}
+
+
+    .text-large {
+    font-size: 50px;
+}
+    
+
+.dashboard-stats {
+    width: 100% ;
+}
+
+.section-1 {
+    width: 49%;
+    display: inline-block;
+}
+
+.section-2 {
+    width: 49% ;
+    float: left;
+}

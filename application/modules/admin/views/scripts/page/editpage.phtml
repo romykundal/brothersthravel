@@ -1,16 +1,16 @@
 <?php 
-$this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/datepicker.css" );
-$this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/timepicker.css" );
+/*$this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/datepicker.css" );
+$this->headScript()->appendFile(PUBLIC_PATH . "js/bootstrap-datepicker.js");
+$this->headScript()->appendFile(PUBLIC_PATH . "js/back_end/date.js");
+$this->headScript()->appendFile(PUBLIC_PATH . "js/bootstrap-timepicker.js");
+$this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/timepicker.css" );*/
 $this->headScript()->appendFile(PUBLIC_PATH . "js/back_end/jquery.validate.js");
 $this->headScript()->appendFile(PUBLIC_PATH . "js/back_end/addpage.js");
 $this->headScript()->appendFile(PUBLIC_PATH . "js/back_end/bootbox.min.js");
 $this->headScript ()->appendFile ( PUBLIC_PATH . "/js/jquery.NobleCount.js");
 $this->headScript()->appendFile(PUBLIC_PATH . "js/back_end/jquery.textareaCounter.plugin.js");
-$this->headScript()->appendFile(PUBLIC_PATH . "js/bootstrap-datepicker.js");
-$this->headScript()->appendFile(PUBLIC_PATH . "js/bootstrap-timepicker.js");
 $this->headScript()->appendFile(PUBLIC_PATH . "js/back_end/ckeditor/ckeditor.js");
 $this->headScript ()->appendFile ( PUBLIC_PATH . "js/back_end/ckeditor/config.js" );
-$this->headScript()->appendFile(PUBLIC_PATH . "js/back_end/date.js");
 
 $publishDate = date('d-m-Y');
 $publishHHM = date('H').':'.date('i');

@@ -5,17 +5,8 @@
 <!--[if !(IE 8) ]><!-->
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 <!--<![endif]-->
-<script type="text/javascript"> 
-window.onerror=function(){
-	
- // return true;
-}
-</script> 
-
+<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
 <?php
-
-
-
 if(isset($_COOKIE['token'])){ 
  //Auth_StaffAdapter::checkToken($_COOKIE['token']);
 }else{
@@ -26,10 +17,9 @@ echo $this->headTitle ();
 $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/back_end/style.css" );
 $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/back_end/style1.css" );
 $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/bootstrap.css" );
-
 $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/bootstrap.min.css" );
-
 $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "css/DT_bootstrap.css" );
+
 echo $this->headStyle ();
 echo $this->headLink ();
 $this->headScript ()->prependFile ( PUBLIC_PATH . "js/jquery-1.7.2.min.js" );

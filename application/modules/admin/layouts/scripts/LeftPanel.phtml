@@ -2,7 +2,7 @@
 $sessionNamespace = new Zend_Session_Namespace();
 $controller = $this->controllerName;
 $action = $this->action;
-$logoname = "Admin Panel";
+$logoname = "cPanel";
 ?>
 <style>
 <!--
@@ -50,7 +50,7 @@ $logoname = "Admin Panel";
         <div class="admin-sidebar-headings"><h2><?php echo $this->translate('Managment');?></h2></div>
         <ul id="adminmenu" role="navigation">
         		
-        		<!-- <li 
+        		<li 
        			<?php if($controller == 'page') { ?>
          	 		class="imbull-has-submenu  imbull-has-current-submenu imbull-menu-open menu-top menu-icon-visitor"
        			<?php  }else {?>
@@ -62,7 +62,7 @@ $logoname = "Admin Panel";
           				<div></div>
         			</div>
         			<a href="<?php echo HTTP_PATH?>admin/page" class="imbull-has-submenu imbull-has-current-submenu imbull-menu-open menu-top menu-icon-widgets" tabindex="1"><?php echo $this->translate('CMS pages');?></a>
-				</li> -->
+				</li>
 			<li <?php if($controller == 'category') { ?>
        
 			       	class="imbull-has-submenu menu-top menu-icon-categories imbull-menu-open imbull-has-current-submenu" 
@@ -73,22 +73,19 @@ $logoname = "Admin Panel";
 					 
 			       	<?php }?>
 			       	id="menu-posts">
-			       	<div class="imbull-menu-image"><a href="javascript:;"><br>
-			          </a></div>
-			        <div class="">
-			          <div></div>
-			        </div>
-			        <a href="<?php echo HTTP_PATH?>admin/category" class="imbull-has-submenu imbull-has-current-submenu imbull-menu-open menu-top menu-icon-categories" tabindex="1"><?php echo $this->translate('Menu Categories');?>
-			        	<span <?php if($controller=='category') { ?>class="arrow-down" <?php }else {?> class="arrow-up" <?php }?>></span>
+			       <div class="imbull-menu-image"></div>	
+			        <a href="<?php echo HTTP_PATH?>admin/category" class="imbull-has-submenu imbull-not-current-submenu menu-top menu-icon-home" tabindex="1">
+			        <?php echo $this->translate('Airlines');?>
+			        	<!-- <span <?php if($controller=='category') { ?>class="arrow-down" <?php }else {?> class="arrow-up" <?php }?>></span> -->
 			        </a>
 			        <div class="imbull-submenu">
 			          <div class="imbull-submenu-wrap">
-			            <div class="imbull-submenu-head"><?php echo $this->translate('Menu Categories');?> </div>
-			            <!-- <ul>
+			            <div class="imbull-submenu-head"><?php echo $this->translate('Airlines');?> </div>
+			             <!-- <ul>
 			               <li class="imbull-first-item current" >
-			               		<a href="<?php echo HTTP_PATH?>admin/category/addcategory" class="imbull-first-item current" tabindex="1"><?php echo $this->translate('Create category');?> </a>
+			               		<a href="<?php echo HTTP_PATH?>admin/category/addcategory" class="imbull-first-item current" tabindex="1"><?php echo $this->translate('Create New Airline');?> </a>
 			               	</li>
-			           </ul> -->
+			           </ul>  -->
 			          </div>
 			        </div>
 			</li>
@@ -97,7 +94,25 @@ $logoname = "Admin Panel";
         			<div class="">
           				<div></div>
         			</div>
-        			<a href="<?php echo HTTP_PATH?>admin/orders" class="imbull-has-submenu imbull-not-current-submenu menu-top menu-icon-home" ><?php echo $this->translate('Orders');?> <span class="arrow-up"></span></a>
+        			<a href="<?php echo HTTP_PATH?>admin/orders" class="imbull-has-submenu imbull-not-current-submenu menu-top menu-icon-home" ><?php echo $this->translate('Orders');?> 
+        			</a>
+      		</li>
+        <li class="imbull-has-submenu imbull-not-current-submenu menu-top menu-icon-home" id="menu-links">
+              <div class="imbull-menu-image"><a href="javascript:;"><br></a></div>
+              <div class="">
+                  <div></div>
+              </div>
+              <a href="<?php echo HTTP_PATH?>admin/products" class="imbull-has-submenu imbull-not-current-submenu menu-top menu-icon-home" ><?php echo $this->translate('Products');?> 
+              </a>
+          </li>
+
+      		<li class="imbull-has-submenu imbull-not-current-submenu menu-top menu-icon-user" id="menu-links">
+        			<div class="imbull-menu-image"><a href="javascript:;"><br></a></div>
+        			<div class="">
+          				<div></div>
+        			</div>
+        			<a href="<?php echo HTTP_PATH?>admin/user" class="imbull-has-submenu imbull-not-current-submenu menu-top menu-icon-user" ><?php echo $this->translate('Manage Users');?> 
+        			</a>
       		</li>
       			  
 		</ul>

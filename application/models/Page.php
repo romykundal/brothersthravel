@@ -196,9 +196,6 @@ class Page extends BasePage
 		die("In page momdel");*/
 		$q = Doctrine_Query::create()
 		->select('p.*')->from('Page p')
-		/*->leftJoin('p.widget w')
-		->leftJoin("p.logo logo")
-		->leftJoin("p.moneysaving artcatg")*/
 		->where('p.id='.$pageId.'')
 		->fetchArray();
 		return $q;

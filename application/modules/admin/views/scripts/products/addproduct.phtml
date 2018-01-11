@@ -44,9 +44,11 @@ $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "/css/jquery-ui-1.8.16.cust
 	 
 					<select name="category" class="combobox" id="category">
 						<option value="">Select one</option>
-						<?php  for($i=0;$i<count($this->catg);$i++){
-						     if(trim($this->catg[$i]['name'])!=''){ ?>
-						     	<option value="<?php echo $this->catg[$i]['id']; ?>"><?php echo $this->catg[$i]['name']; ?></option>
+						<?php 
+                                foreach ($this->catg as $key => $value) {
+                                    
+						     if(trim($value)!=''){ ?>
+						     	<option value="<?php echo trim($value); ?>"><?php echo $value; ?></option>
 						<?php     
 						      }
 						 }
@@ -70,36 +72,6 @@ $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "/css/jquery-ui-1.8.16.cust
                             </div>
                         </div>
                         
-                        <div class="mainpage-content-line">
-                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Slug'); ?></strong></label></div>
-                            <div class="mainpage-content-right control-group">
-                                <div class="mainpage-content-right-inner-right-other help-inline"></div>
-                                <div class="mainpage-content-right-inner-left-other">
-                                <input type="text"  maxlength="54" name="Slug" id="Slug" placeholder="<?php echo $this->translate('Slug'); ?>" class="span3">
-                                </div>                        
-                            </div>
-                        </div>
-                        
-                        <div class="mainpage-content-line">
-                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Model'); ?></strong></label></div>
-                            <div class="mainpage-content-right control-group">
-                                <div class="mainpage-content-right-inner-right-other help-inline"></div>
-                                <div class="mainpage-content-right-inner-left-other">
-                                <input type="text"  maxlength="54" name="Model" id="Model" placeholder="<?php echo $this->translate('Model'); ?>" class="span3">
-                                </div>                        
-                            </div>
-                        </div>
-
-                        <div class="mainpage-content-line">
-                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Quantity'); ?></strong></label></div>
-                            <div class="mainpage-content-right control-group">
-                                <div class="mainpage-content-right-inner-right-other help-inline"></div>
-                                <div class="mainpage-content-right-inner-left-other">
-                                <input type="text"  maxlength="54" name="Quantity" id="Quantity" placeholder="<?php echo $this->translate('Quantity'); ?>" class="span3">
-                                </div>                        
-                            </div>
-                        </div>
-
                         <div class="mainpage-content-line">
                             <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Price'); ?></strong></label></div>
                             <div class="mainpage-content-right control-group">
@@ -127,8 +99,8 @@ $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "/css/jquery-ui-1.8.16.cust
                         <div class="mainpage-content-right-inner-left-other" style="border-bottom-width: 0px; margin-bottom: 10px;" >
 					 <div id = "divFile">
 						<input type="file" id="image[]" name = "image[]" style="margin-top:3px;margin-bottom:10px;">  
-						<a href="javascript:;" onclick="AddFile();" id="uploadMoreImages" style="left:3px;position:relative;" >
-						<img src="<?php echo PUBLIC_PATH; ?>images/add_to_playlist.png" alt="upload more" title="upload more" ></a>
+						<!-- <a href="javascript:;" onclick="AddFile();" id="uploadMoreImages" style="left:3px;position:relative;" >
+						<img src="<?php echo PUBLIC_PATH; ?>images/add_to_playlist.png" alt="upload more" title="upload more" ></a> -->
 			 		</div>
                     	</div>
                     	</div>

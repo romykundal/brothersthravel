@@ -1,6 +1,6 @@
 <?php
 
-  $this->headTitle()->append($this->translate('Add Category'));
+  $this->headTitle()->append($this->translate('Add Airline'));
   $this->headScript ()->appendFile ( PUBLIC_PATH . "/js/back_end/jquery.validate.js" );
   $this->headScript ()->appendFile ( PUBLIC_PATH . "/js/back_end/addCategory.js" );
   $this->headScript ()->appendFile ( PUBLIC_PATH . "/js/back_end/jquery.textareaCounter.plugin.js");
@@ -10,7 +10,7 @@
 	<input type="hidden" value="" name='iconId' id='iconId' />
 	<input type="hidden" value="" name='id' id='id' />
 	
-		<h1><?php echo $this->translate('Create Category'); ?><input type="button"  Value='<?php echo $this->translate('Cancel'); ?>' class="btn ml10" onClick="window.location.href='<?php echo HTTP_PATH; ?>admin/category'" /></h1>
+		<h1><?php echo $this->translate('Create New Airline'); ?><input type="button"  Value='<?php echo $this->translate('Cancel'); ?>' class="btn ml10" onClick="window.location.href='<?php echo HTTP_PATH; ?>admin/category'" /></h1>
 
 		<div id="poststuff" class="metabox-holder has-right-sidebar">
 			<div id="post-body">
@@ -19,13 +19,13 @@
 
 						<div class="mainpage-content-line">
 							<div class="mainpage-content-left">
-								<label><strong><?php echo $this->translate('Title'); ?></strong></label>
+								<label><strong><?php echo $this->translate('Name'); ?></strong></label>
 							</div>
 							<div class="mainpage-content-right">
 								<div class="mainpage-content-right-inner-right-other"></div>
 								<div class="mainpage-content-right-inner-left-other">
 									<input type="text" name="categoryName"
-										placeholder="<?php echo $this->translate('Title');?>"
+										placeholder="<?php echo $this->translate('Name');?>"
 										class="span3" maxlength="50"/>
 								</div>
 							</div>
@@ -66,7 +66,7 @@
 		</div>
 		<div class="mainpage-content-colorbox">
 			<button id='saveCategory' type="submit" class="btn btn-large btn-primary fl">
-            		<?php echo $this->translate('CREATE CATEGORY')?>
+            		<?php echo $this->translate('CREATE AIRLINE')?>
             	</button>
 			<a href="<?php echo HTTP_PATH; ?>admin/category" class="fl m10"
 				id="cancelCategory"> <strong><?php echo $this->translate('CANCEL')?></strong></a>
