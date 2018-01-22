@@ -15,7 +15,7 @@ defined('APPLICATION_ENV')
 				(getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV')
 						: 'production'));
 
-define("HTTP_PATH", 'http://' . $_SERVER['HTTP_HOST'] . '/');
+define("HTTP_PATH", 'http://' . $_SERVER['HTTP_HOST'] . '/travel/');
 
 //PUBLIC PATH
 defined('PUBLIC_PATH')

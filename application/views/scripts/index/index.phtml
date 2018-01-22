@@ -2,36 +2,22 @@
         <section id="home-boxs" class="section-full gray-bg">
             <div class="container">
                 <div class="row">
+                <?php foreach ($this->topProducts as $key => $value) { ?>
+                                      
                     <div class="col-md-4">
                         <figure class="single-service">
-                            <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c1.png" class="img-fluid" alt="">
+                            <img src="<?php echo PUBLIC_PATH; ?>images/upload/products/medium/thum_medium_<?php echo $value["image"] ; ?>" class="img-fluid" alt="">
                             <figcaption class="text-center">
-                                <h5 class="text-uppercase">Addiction Whit Gambling</h5>
-                                <p>It is a good idea to think of your PC as an office. It stores files, programs, pictures. This can be compared to an actual office’s files</p>
+                                <h5 class="text-uppercase"><?php echo $value["title"] ; ?></h5>
+                                <p><?php echo $value["description"] ; ?>
+                                </p>
                                 <a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW<span class="lnr lnr-arrow-right"></span></a>
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="col-md-4">
-                        <figure class="single-service">
-                            <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c2.jpg" class="img-fluid" alt="">
-                            <figcaption class="text-center">
-                                <h5 class="text-uppercase">Headset No Longer Wired</h5>
-                                <p>If you are in the market for a computer, there are a number of factors to consider. Will it be used for your home, your office or perhaps </p>
-                                <a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW<span class="lnr lnr-arrow-right"></span></a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="single-service">
-                            <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c3.jpg" class="img-fluid" alt="">
-                            <figcaption class="text-center">
-                                <h5 class="text-uppercase">Life Advice Looking At Window</h5>
-                                <p>Having a baby can be a nerve wrackingexp erience for new parents – not the nine months of pregnancy, I’m talking</p>
-                                <a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW<span class="lnr lnr-arrow-right"></span></a>
-                            </figcaption>
-                        </figure>
-                    </div>
+                    
+                <?php } ?>
+                   
                 </div>
             </div>
         </section>
@@ -43,9 +29,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="section-title text-center">
-                            <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/ts3.png" class="img-fluid">
-                            <p class="text-uppercase">WHAT WE ARE</p>
-                            <h3>Plantronics with its GN Netcom <b>wireless headset</b> creates the next generation of wireless headset and other products such as wireless amplifiers, and <b>wireless headset</b> telephone.</h3>
+                            <!-- <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/ts3.png" class="img-fluid"> -->
+                            <h6><p class="text-uppercase"><?php echo $this->whatweare["pageTitle"]; ?></p></h6>
+                            <h3><?php echo $this->whatweare["content"]; ?></h3>
                         </div>
                     </div>
                 </div>
@@ -65,21 +51,22 @@
                     </div>
                 </div>
                 <div class="row">
+                 <?php foreach ($this->hotProducts as $key => $value) { ?>
                     <div class="col-lg-4 col-sm-6">
                         <div class="single-product">
-                        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" />
+                        <img src="<?php echo PUBLIC_PATH; ?>images/upload/products/medium/thum_medium_<?php echo $value["image"] ; ?>" />
                             <div class="icon">
 
                             </div>
                             <div class="desc">
-                                <h4>Chandigarh-New Delhi</h4>
-                                <p>Best fares for New Delhi </p>
-                                <h5> Rs.6,822<span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
+                                <h4><?php echo $value["title"] ; ?></h4>
+                                <p><?php echo $value["description"] ; ?> </p>
+                                <h5> Rs.<?php echo $value["price"] ; ?><span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-4 col-sm-6">
+                <?php } ?>    
+                    <!-- <div class="col-lg-4 col-sm-6">
                         <div class="single-product">
                         <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" />
                             <div class="icon">
@@ -150,7 +137,7 @@
                                 <h5> Rs.6,822<span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>

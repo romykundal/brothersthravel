@@ -306,20 +306,12 @@ class Category extends BaseCategory
 	
 	/**
 	 * @return array $categoryList for frontend
-	 * @author Raman
+	 * @author Rohit
 	 * @version 1.0
 	 */
 	public static function getCategoryForFront() {
 	
 	
-		/*$catg = Doctrine_Query::create()
-		->select('c.*, img.*')
-		->from("Category c")
-		->leftJoin("c.images img")
-		->Where("c.deleted = 0" )
-		->andWhere("c.status = 1" )
-		->orderBy("c.name ASC")
-		->fetchArray();*/
 		$catg = Doctrine_Query::create()
 		->select('c.*')
 		->from("Category c")

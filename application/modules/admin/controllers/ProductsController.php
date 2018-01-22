@@ -111,7 +111,8 @@ class Admin_ProductsController extends Zend_Controller_Action
     	if(intval($id) > 0 )
     	{
     		$data = Products::getproduct($id);
-        $this->view->catg = array('Hot Deal','Top Deal', 'Popular Deal', 'Deals' ) ;  
+      $this->view->catg = array('HOT'=>'Hot Deal', 'TOP'=>'Top Deal', 'POP'=>'Popular Deal', 'DEAL'=>'Deals' ) ;  
+      
     		$rslt = @$data[0];
     		$this->view->productdata = @$rslt ;
     		if($rslt["image"]){
@@ -281,7 +282,7 @@ print_r($params);*/
     		}
     	}
 
-    	$this->view->catg = array('Hot Deal','Top Deal', 'Popular Deal', 'Deals' ) ;	
+    	$this->view->catg = array('HOT'=>'Hot Deal', 'TOP'=>'Top Deal', 'POP'=>'Popular Deal', 'DEAL'=>'Deals' ) ;	
     }
     
     public function searchkeyAction(){

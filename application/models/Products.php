@@ -19,11 +19,8 @@ class Products extends BaseProducts
 	 */
 	public static function addProducts($params, $imgfiles)
 	{
-/*		echo "<pre>";
-		print_r($params);
-		print_r($imgfiles);
-		die;
-*/	  $productObj = new Products();
+
+	  $productObj = new Products();
 	  $productObj->title = BackEnd_Helper_viewHelper::stripSlashesFromString($params['Title']);
 	  $productObj->category = BackEnd_Helper_viewHelper::stripSlashesFromString($params['category']);
 	  $productObj->price = BackEnd_Helper_viewHelper::stripSlashesFromString($params['Price']);
@@ -175,6 +172,19 @@ class Products extends BaseProducts
 	
 	}
 	
+
+	public static function getProductsByCategory($category) {
+	
+		$data = Doctrine_Query::create()->select("p.*")
+		->from('Products p')
+		->where("p.category = ?", $category)
+		->fetchArray();
+		
+		return $data;
+	}
+
+
+
 	
 // End class
 }

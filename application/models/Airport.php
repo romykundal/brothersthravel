@@ -31,8 +31,6 @@ class Airport extends BaseAirport
 				->where('g.name LIKE ?', "$srh%")
 				->andWhere('g.deleted = 0')
 				->orderBy('g.code DESC');
-print_r($data);
-        die("wwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
 		
 		$result =  Zend_Json::encode(DataTable_Helper::generateDataTableResponse($data, 
 				$params, 

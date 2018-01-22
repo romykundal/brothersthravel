@@ -34,7 +34,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
          <h1><?php  echo $this->translate('Edit Order'); ?>
           <input type="button"  Value='<?php echo $this->translate('Cancel'); ?>' name='Order' class="btn ml10" onClick="window.location.href='<?php echo HTTP_PATH; ?>admin/orders'" />
           </h1>
-<form name="addOrder" id='addOrder' method='POST' action='' enctype="multipart/form-data">
+    <form name="addOrder" id='addOrder' method='POST' action='' enctype="multipart/form-data">
   <div id='addNewUserDivInner' class="metabox-holder has-right-sidebar">
   <div id="post-body">
        <div>
@@ -99,7 +99,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             </div>
                         </div>
                         <div class="mainpage-content-line">
-                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Departure Date&Time'); ?></strong></label></div>
+                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Departure Date & Time'); ?></strong></label></div>
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
@@ -108,7 +108,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             </div>
                         </div>
                         <div class="mainpage-content-line">
-                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Return Date&Time'); ?></strong></label></div>
+                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Return Date & Time'); ?></strong></label></div>
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
@@ -166,26 +166,39 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                         </div>
 
 
-              <div class="mainpage-content-line">
-                      <div class="mainpage-content-left"><label><strong><?php  echo $this->translate('Stop Details'); ?></strong></label></div>
-                      <div class="mainpage-content-right">
-                        <div class="mainpage-content-right-inner-right-other"></div>
-                        <div class="mainpage-content-right-inner-left-other" style="border-bottom-width: 0px; margin-bottom: 10px;" >
-              <textarea class="input-xlarge mbot bbot ignore" id="stopDetails" placeholder="<?php echo $this->translate('stopDetails'); ?>" name="stopDetails"  rows="3" ><?php echo $this->productdata["stopDetails"] ; ?></textarea>
+                      <div class="mainpage-content-line">
+                              <div class="mainpage-content-left"><label><strong><?php  echo $this->translate('Stop Details'); ?></strong></label></div>
+                              <div class="mainpage-content-right">
+                                <div class="mainpage-content-right-inner-right-other"></div>
+                                <div class="mainpage-content-right-inner-left-other" style="border-bottom-width: 0px; margin-bottom: 10px;" >
+                      <textarea class="input-xlarge mbot bbot ignore" id="stopDetails" placeholder="<?php echo $this->translate('stopDetails'); ?>" name="stopDetails"  rows="3" ><?php echo $this->productdata["stopDetails"] ; ?></textarea>
+                        </div>
+                        </div>
                       </div>
-                      </div>
+           
+                      <div class="mainpage-content-line">
+                          <div class="mainpage-content-left"><strong><?php echo $this->translate('Status') . $this->productdata["status"]; ?></strong></div>
+                          <div class="mainpage-content-right">
+                          <div class="mainpage-content-right-inner-right-other"></div>
+                          <div class="mainpage-content-right-inner-left-other">
+                        <select name="status" class="combobox" id="status">
+                          <option value="">Choose Status</option>
+                            <option <?php if(trim($this->productdata["status"]) == "pending") { echo "selected"; } ?> value="pending">Pending</option>
+                            <option <?php if(trim($this->productdata["status"]) == "booked") { echo "selected"; } ?> value="booked">Booked</option>
+                            <option <?php if(trim($this->productdata["status"]) == "cancelled") { echo "selected"; } ?> value="cancelled">Cancelled</option>
+                          
+                        </select>
+                       </div>
+                       </div>
                     </div>
-                   
-      <div class="clear"></div>
-    
+      
+            <div class="clear"></div>      
             <div class="mainpage-content-colorbox">
               <input type="hidden" name="contr" id="editcontr" value="update">
               <button id='saveProducts'  type="submit" class="btn btn-large btn-primary fl" ><?php echo $this->translate('Save'); ?></button>
-        <a href="<?php echo HTTP_PATH; ?>admin/orders/index"  class="fl m10"><strong><?php echo $this->translate('CANCEL'); ?></strong></a>
-           
+              <a href="<?php echo HTTP_PATH; ?>admin/orders/index"  class="fl m10"><strong><?php echo $this->translate('CANCEL'); ?></strong></a>
             </div>
       
-            
-            </form>
+    </form>
  
-        </div>
+      </div>

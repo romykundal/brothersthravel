@@ -694,11 +694,11 @@ public static function getPageDetailInError($page){
 
 /**
  * get default page
- * @author kkumar
+ * @author rohit
  * @version 1.0
  */
 
-public static function PagesPermalinksList(){
+public static function PagesByCategory(){
 	$q = Doctrine_Query::create()
 	->select('id, permaLink')
 	->from('Page p')
@@ -708,4 +708,22 @@ public static function PagesPermalinksList(){
 	->fetchArray();
 	return $q;
 }
+
+
+	/**
+	 * Fetches one record according to id to show in F.A.Q. form
+	 * @param $id
+	 * @author rohit
+	 */
+	public static function getPageById($id){
+		$data = Doctrine_Query::create()
+		->select("p.*")
+		->from('Page p')
+		->where("p.id = ?" , $id)
+		->andWhere('p.deleted=0')
+		->fetchOne(null , Doctrine::HYDRATE_ARRAY);
+		return $data;
+	}	
+
+
 }

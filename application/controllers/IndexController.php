@@ -15,15 +15,23 @@ class IndexController extends Zend_Controller_Action {
 	}
 
 	public function indexAction() {
-		//die("<h1>Comming Soon</h1>");
-		$this->view->action = $this->getRequest()->getParam('action');
 		
-		//die("Stopper");
+		$this->view->action = $this->getRequest()->getParam('action');
+		$this->view->controller = $this->getRequest()->getParam('controller');
+		
+		
+		$topProducts = Products::getProductsByCategory("TOP");
+		$hotProducts = Products::getProductsByCategory("HOT");
+		$pageWhatWeAre = Page::getPageById(31);
+		$this->view->whatweare = $pageWhatWeAre ;
+		$this->view->topProducts = $topProducts ;
+		$this->view->hotProducts = $hotProducts ;
 	}
 	
 	public function contactAction() {
 		
 		$this->view->action = $this->getRequest()->getParam('action');
+		$this->view->controller = $this->getRequest()->getParam('controller');
 		
 		/*echo "<h1 style='text-align:center;'><strong style='color:red;'>Under Construction.</strong> Coming Soon ...</h1>";
 		die;*/
@@ -34,6 +42,9 @@ class IndexController extends Zend_Controller_Action {
 	public function aboutusAction() {
 		
 		$this->view->action = $this->getRequest()->getParam('action');
+		$this->view->controller = $this->getRequest()->getParam('controller');
+
+		
 		
 	}
 

@@ -71,28 +71,26 @@ class Admin_OrdersController extends Zend_Controller_Action
     		$data = Inquiries::getOrderDetails($id);
     		$this->view->productdata = $data ;
     		$this->view->id = $id;
-/*echo "<pre>" ;
-print_r($data);
-die;    */
+
     	}
     	
     	if ($this->_request->isPost())
     	{
     		$w = Doctrine_Core::getTable("Inquiries")->find($params['id']);
-    		$words= $w->updateInquiry($params);
+    		$booking= $w->updateInquiry($params);
 
     		$flash = $this->_helper->getHelper('FlashMessenger');
-    		if($words)
+    		if($booking)
     		{
     			$message = $this->view->translate('Record has been updated successfully');
     			$flash->addMessage(array('success' => $message));
-    			$this->_helper->redirector(null , 'unsafewords' , null ) ;
+    			$this->_helper->redirector(null , 'orders' , null ) ;
     
     		} else
     		{
     			$message = $this->view->translate('Problem in your data.');
     			$flash->addMessage(array('error' => $message));
-    			$this->_helper->redirector(null , 'unsafewords' , null ) ;
+    			$this->_helper->redirector(null , 'orders' , null ) ;
     		}
     	}
     }

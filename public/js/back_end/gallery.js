@@ -186,92 +186,75 @@ var focusRules = {
 						"sAjaxSource" : HOST_PATH + "admin/orders/getgallerylist/searchtext/"+$('#searchProduct').val(),
 						"aoColumns" : [
 
-						               {
-										"fnRender" : function(obj) {
-											return title  = obj.aData.name ;
-										},
-										"bSortable" : false
-										},
-										{
-											"fnRender" : function(obj) {
-												return title  = obj.aData.phoneNumber ;
-										},
-										"bSortable" : false
-										},
-										{
-										"fnRender" : function(obj) {
-											return title  = obj.aData.email ;
-										},
-										"bSortable" : false
-										},
-										{
-										"fnRender" : function(obj) {
-											return depDate  = obj.aData.departureDate +' '+ obj.aData.departureTime ;
-								
-										},
-										"bSortable" : false		
-										},
-										{
-										"fnRender" : function(obj) {
-											return returnDate  = obj.aData.returnDate +' '+ obj.aData.returnTime;
-											},
-											"bSortable" : false		
-										},
-										{
-										"fnRender" : function(obj) {
-											return title  = obj.aData.departure ;
-											},
-											"bSortable" : false		
-										},
-										{
-										"fnRender" : function(obj) {
-											return title  = obj.aData.arrival ;
-											},
-											"bSortable" : false		
-										},
-										{	
-											"fnRender" : function(obj) {
-												return price  = obj.aData.catg_name ;
-											},
-											"bSortable" : false
-										},
-										{	
-											"fnRender" : function(obj) {
-												return price  = obj.aData.travelType ;
-											},
-											"bSortable" : false
-										},
-										 {
-											"fnRender" : function(obj) {
-												return price  = obj.aData.members ;
-											},
-											"bSortable" : false
-										},
-										
-										
-//										{
-//											"fnRender" : function(obj) {
-//					  
-//												  var v = "<a href='javascript:void(0);'id='edit' onClick='callToEdit("+ obj.aData. id+");'>Edit</a>"; 
-//				                                  
-//												  return  v;
-//
-//												},
-//												"bSearchable" : false,
-//												"bSortable" : false
-//
-//										}, 
-						{
+			               {
+							"fnRender" : function(obj) {
+								return title  = obj.aData.name ;
+							},
+							"bSortable" : false
+							},
+							{
 								"fnRender" : function(obj) {
-
-								  var del = "<a href='javascript:void(0);' id='View' onClick='callToEdit(" + obj.aData. id +");' >Edit Details</a>";
+									return title  = obj.aData.phoneNumber ;
+							},
+							"bSortable" : false
+							},
+							/*{
+							"fnRender" : function(obj) {
+								return title  = obj.aData.email ;
+							},
+							"bSortable" : false
+							},*/
+							{
+							"fnRender" : function(obj) {
+								return depDate  = obj.aData.departureDate +' '+ obj.aData.departureTime ;
+					
+							},
+							"bSortable" : false		
+							},
+							{
+							"fnRender" : function(obj) {
+								return returnDate  = obj.aData.returnDate +' '+ obj.aData.returnTime;
+								},
+								"bSortable" : false		
+							},
+							{
+							"fnRender" : function(obj) {
+								return title  = obj.aData.departure ;
+								},
+								"bSortable" : false		
+							},
+							{
+							"fnRender" : function(obj) {
+								return title  = obj.aData.arrival ;
+								},
+								"bSortable" : false		
+							},
+							{	
+								"fnRender" : function(obj) {
+									return price  = obj.aData.status ;
+								},
+								"bSortable" : false
+							},
+							/*{	
+								"fnRender" : function(obj) {
+									return price  = obj.aData.travelType ;
+								},
+								"bSortable" : false
+							},*/
+							 {
+								"fnRender" : function(obj) {
+									return price  = obj.aData.members ;
+								},
+								"bSortable" : false
+							},
+							{
+								"fnRender" : function(obj) {
+								  var del = "<a href='javascript:void(0);' id='View' onClick='callToEdit(" + obj.aData. id +");' >Edit</a>";
 		                             return  del;
-
 								},
 								"bSearchable" : false,
 								"bSortable" : false
-
-							} 
+							}
 						
 						],	
 						"fnInitComplete" : function(obj) {

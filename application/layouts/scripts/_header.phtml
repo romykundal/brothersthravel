@@ -36,6 +36,7 @@ echo $this->headLink ();
     $this->headScript ()->prependFile ( PUBLIC_PATH . "js/front_end/bootstrap.min.js" );
     $this->headScript ()->prependFile ( PUBLIC_PATH . "js/front_end/jquery.ajaxchimp.min.js" );
     $this->headScript ()->prependFile ( PUBLIC_PATH . "js/front_end/jquery.sticky.js" );
+    $this->headScript ()->prependFile ( PUBLIC_PATH . "js/front_end/jquery.newsTicker.js" );
     $this->headScript ()->prependFile ( PUBLIC_PATH . "js/front_end/owl.carousel.min.js" );
     $this->headScript ()->prependFile ( PUBLIC_PATH . "js/front_end/main.js" );
 
@@ -44,6 +45,15 @@ echo $this->headMeta ();
 echo $this->headTitle ();
 ?>
 
+    <script type="text/javascript">
+      var nt_example1 = $('#nt').newsTicker({
+                row_height: 80,
+                max_rows: 3,
+                duration: 4000,
+                //prevButton: $('#nt-example1-prev'),
+                //nextButton: $('#nt-example1-next')
+            });
+    </script>
   </head>
   <body>
     <div id="top"></div>
@@ -60,25 +70,16 @@ echo $this->headTitle ();
             <div class="right-bar d-flex align-items-center">
               <nav class="d-flex align-items-center">
                 <ul class="main-menu">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
+                  <li><a href="<?php echo HTTP_PATH; ?>">Home</a></li>
+                  <li><a href="<?php echo HTTP_PATH.'index/aboutus' ; ?>">About</a></li>
                   <li><a href="#">Blog</a></li>
                   <li><a href="#">Contact</a></li>
+                  <li><a href="#">SignIn</a></li>
+                  <li><a href="#">SignUp</a></li>
                 </ul>
                 <a href="#" class="mobile-btn"><span class="lnr lnr-menu"></span></a>
               </nav>
-              <div class="search relative d-none">
-                <span class="lnr lnr-magnifier"></span>
-                <form action="#" class="search-field">
-                  <input type="text" placeholder="Search here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search here'">
-                  <button class="search-submit"><span class="lnr lnr-magnifier"></span></button>
-                </form>
-              </div>
-              <div class="header-social d-none align-items-center">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-              </div>
+              
             </div>
           </div>
         </div>

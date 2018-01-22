@@ -48,7 +48,7 @@ $this->headLink ()->appendStylesheet ( PUBLIC_PATH . "/css/jquery-ui-1.8.16.cust
                                 foreach ($this->catg as $key => $value) {
                                     
 						     if(trim($value)!=''){ ?>
-						     	<option value="<?php echo trim($value); ?>"><?php echo $value; ?></option>
+						     	<option value="<?php echo trim($key); ?>"><?php echo $value; ?></option>
 						<?php     
 						      }
 						 }

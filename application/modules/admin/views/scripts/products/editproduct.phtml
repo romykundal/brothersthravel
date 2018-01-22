@@ -51,7 +51,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
 					<select name="category" class="combobox" id="category">
 						<option value="">Select one</option>
 						<?php  foreach ($this->catg as $key => $value) { ?>
-						  <option <?php if(trim($this->productdata["category"]) == trim($value)) { echo "selected"; } ?> value="<?php echo trim($value); ?>"><?php echo $value; ?></option>
+						  <option <?php if(trim($this->productdata["category"]) == trim($key)) { echo "selected"; } ?> value="<?php echo trim($key); ?>"><?php echo $value; ?></option>
 						<?php } ?>
  					</select>
                      </div>

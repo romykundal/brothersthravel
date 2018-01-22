@@ -33,7 +33,7 @@ class Inquiries extends BaseInquiries
 		
 		return Zend_Json::encode(DataTable_Helper::generateDataTableResponse($data, 
 				$params, 
-				array("__identifier" => 'g.name', 'g.phoneNumber', 'g.departure', 'g.arrival', 'g.departureDate', 'g.returnDate', 'g.travelType', 'g.departureTime', 'g.returnTime', 'g.created_at','g.updated_at'),
+				array("__identifier" => 'g.name', 'g.phoneNumber', 'g.departure', 'g.arrival', 'g.departureDate', 'g.returnDate', 'g.travelType', 'g.departureTime', 'g.returnTime', 'g.status', 'g.created_at','g.updated_at'),
 						array(),
 						array()
 				));
@@ -71,12 +71,15 @@ class Inquiries extends BaseInquiries
 
 		function updateInquiry($params){
 			
-		$this->pageTitle = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pageTitle']);
-		$this->metaTitle = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pagemetaTitle']);
-		$this->metaDescription = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pagemetaDesc']);
-		$this->content = BackEnd_Helper_viewHelper::stripSlashesFromString($params['pageDesc']);
+		$this->baseFare = BackEnd_Helper_viewHelper::stripSlashesFromString($params['baseFare']);
+		$this->surcharges = BackEnd_Helper_viewHelper::stripSlashesFromString($params['surcharges']);
+		$this->grandTotal = BackEnd_Helper_viewHelper::stripSlashesFromString($params['grandTotal']);
+		$this->discount = BackEnd_Helper_viewHelper::stripSlashesFromString($params['discount']);
+		$this->stop = BackEnd_Helper_viewHelper::stripSlashesFromString($params['stop']);
+		$this->stopDetails = BackEnd_Helper_viewHelper::stripSlashesFromString($params['stopDetails']);
+		$this->status = BackEnd_Helper_viewHelper::stripSlashesFromString($params['status']);
 		
-		$pageid = @$params['pageId'];
+		$pageid = @$params['id'];
 		
 		try{
 		//call cache function
@@ -88,8 +91,6 @@ class Inquiries extends BaseInquiries
 			return false;
 		}
 		
-		
-			
 	}
 
 	
