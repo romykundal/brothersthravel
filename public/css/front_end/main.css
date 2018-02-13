@@ -72,11 +72,11 @@ iframe {
   border: 0;
 }
 
-a, a:focus, a:hover {
+/*a, a:focus, a:hover {
   text-decoration: none;
   outline: 0;
   color: #777777;
-}
+}*/
 
 .btn.active.focus,
 .btn.active:focus,
@@ -1138,16 +1138,17 @@ td, th {
 }
 
 .banner-area {
-  background: url(../../images/front_end/banner4.jpg) no-repeat center center/cover; 
+  background: url(../../images/front_end/tour.png) no-repeat center center/cover; 
 
 }
 
 .banner-area .overlay-bg {
-  background: #000;
   opacity: 0.7;
-  /*background: -moz-linear-gradient(left, rgba(60, 64, 143, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
+  /*background: #000;
+  background: -moz-linear-gradient(left, rgba(60, 64, 143, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
   background: -webkit-linear-gradient(left, rgba(60, 64, 143, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
   background: linear-gradient(to right, rgba(60, 64, 143, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);*/
+  background: linear-gradient(to right, rgba(148, 150, 189, 0.95) 0%, rgba(191, 195, 255, 0.95) 100%);
 }
 
 .single-service {
@@ -1742,10 +1743,10 @@ footer .footer-nav li a:hover {
 	
 	padding: 30px 0px;}	
 
-.form-group {
+/*.form-group {
     width: 75%;
     margin: 0px auto;
-}
+}*/
 .form-row{
 	  width: 75%;
     margin: 0px auto;
@@ -1924,6 +1925,19 @@ footer .footer-nav li a:hover {
   border-bottom: 1px dotted #2c8162;
 }
 
+#accountul li {
+  color: #4e4e4e;
+  background: #F2F2F2;
+  overflow: hidden;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px dotted #2c8162;
+}
+
+#accountul li:hover {
+  background: #FFF;
+} 
+
 #nt li:hover {
   background: #FFF;
 } 
@@ -1977,13 +1991,6 @@ footer .footer-nav li a:hover {
     margin: 30px 0px;
  }
 
-
-
-
-
-
-
-
-
-
-
+.booking-type{
+  padding: 0 0 30px 280px;  
+}

@@ -216,7 +216,7 @@ var focusRules = {
 									          } else {
 
 									           var image = "thum_" + obj.aData.image;
-									           imgSrc = HOST_PATH_PUBLIC +'images/upload/products/thumb/'+ image;
+									           imgSrc = HOST_PATH_PUBLIC +'/images/upload/products/thumb/'+ image;
 
 									          }
 									          var html = "<img id='prod_img' src='"

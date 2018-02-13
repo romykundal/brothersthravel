@@ -241,12 +241,12 @@ var focusRules = {
 								},
 								"bSortable" : false
 							},*/
-							 {
+							/*{
 								"fnRender" : function(obj) {
 									return price  = obj.aData.members ;
 								},
 								"bSortable" : false
-							},
+							},*/
 							{
 								"fnRender" : function(obj) {
 								  var del = "<a href='javascript:void(0);' id='View' onClick='callToEdit(" + obj.aData. id +");' >Edit</a>";

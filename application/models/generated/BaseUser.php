@@ -65,12 +65,16 @@ abstract class BaseUser extends Doctrine_Record
              'type' => 'string',
              'length' => '255',
              ));
-        $this->hasColumn('phoneNumber', 'integer', 20, array(
+        $this->hasColumn('phonenumber', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => '20',
+             ));
+        $this->hasColumn('zipcode', 'integer', 20, array(
              'type' => 'integer',
              'length' => '20',
              ));
         
-        $this->hasColumn('Address', 'string', 255, array(
+        $this->hasColumn('address', 'string', 255, array(
         		'type' => 'string',
         		'length' => 255,
         
@@ -104,9 +108,9 @@ abstract class BaseUser extends Doctrine_Record
     {
         parent::setUp();
  
-        $this->hasMany('Drawings', array(
+       /* $this->hasMany('Drawings', array(
         		'local' => 'id',
-        		'foreign' => 'userId'));
+        		'foreign' => 'userId'));*/
         
         $softdelete0 = new Doctrine_Template_SoftDelete(array(
              'name' => 'deleted',

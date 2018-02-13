@@ -74,8 +74,10 @@ class Admin_AuthController extends Zend_Controller_Action {
 		Zend_Session::namespaceUnset('msg');
 		$username = $params['uname'];
 		$password = $params['pwd'];
+		$roleId = 1;
+
 		//set authentication if user valid
-		$data_adapter = new Auth_StaffAdapter($username, $password);
+		$data_adapter = new Auth_StaffAdapter($username, $password, $roleId);
 		$auth = Zend_Auth::getInstance();
 		
 		$result = $auth->authenticate($data_adapter);

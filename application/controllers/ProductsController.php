@@ -13,10 +13,11 @@ class ProductsController extends Zend_Controller_Action {
 
 	public function indexAction() { 
 		
-		
+		$this->view->heading = "All Deals" ;
+		$this->view->topTitle = "All Deals" ;
 		$params = $this->_getAllParams();
-		$productslist = Products::showProducts($params);
-		$this->view->procts = $productslist ;
+		$hotProducts = Products::getProductsByCategory("DEAL");
+		$this->view->hotProducts = $hotProducts ;
 
 // 		echo "<pre>";
 // 		print_r($productslist);

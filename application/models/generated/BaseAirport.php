@@ -21,7 +21,13 @@ abstract class BaseAirport extends Doctrine_Record
     public function setTableDefinition()
     {
         $this->setTableName('airports');
-       
+        $this->hasColumn('id', 'integer', 20, array(
+             'primary' => true,
+             'type' => 'integer',
+             'autoincrement' => true,
+             'comment' => 'PK',
+             'length' => '20',
+             ));       
         $this->hasColumn('code', 'string', 1024, array(
              'type' => 'string',
              'length' => '1024',

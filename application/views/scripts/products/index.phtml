@@ -1,0 +1,47 @@
+<?php
+if(Zend_Auth::getInstance()->hasIdentity()){
+    $link = HTTP_PATH.'index/booknow' ;                                 
+}else{
+    $link = HTTP_PATH.'user/login' ;
+}
+?>
+     <section id="services" class="title-bg section-full">
+
+
+            <div class="container">
+                <!-- <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="product-area-title text-center">
+                            <h2 class="h1"><?php //echo ucfirst($this->heading); ?></h2>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="row">
+                 <?php foreach ($this->hotProducts as $key => $value) { ?>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="single-product">
+                        <img src="<?php echo PUBLIC_PATH; ?>images/upload/products/medium/thum_medium_<?php echo $value["image"] ; ?>" />
+                            <div class="icon">
+
+                            </div>
+                            <div class="desc">
+                                <h4><?php echo $value["title"] ; ?></h4>
+                                <p><?php echo $value["description"] ; ?> </p>
+                                <h5> Rs.<?php echo $value["price"] ; ?><span><a href="<?php echo $link ; ?>" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>    
+                   
+                </div>
+            </div>
+             <?php 
+                if(count($this->hotProducts) == 0){
+
+                    echo '<div class="alert alert-dark" role="alert">NO RECORD FOUND! THANKS FOR VISITING. PLEASE VISIT AGAIN</div>';
+                }
+
+                 ?>   
+        </section>
+        <!-- End Product Area -->
+        

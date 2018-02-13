@@ -1,3 +1,12 @@
+<?php
+
+if(Zend_Auth::getInstance()->hasIdentity()){
+    $link = HTTP_PATH.'index/booknow' ;                                 
+}else{
+    $link = HTTP_PATH.'user/login' ;
+}
+
+?>
         <!-- Start About Area -->
         <section id="home-boxs" class="section-full gray-bg">
             <div class="container">
@@ -11,7 +20,7 @@
                                 <h5 class="text-uppercase"><?php echo $value["title"] ; ?></h5>
                                 <p><?php echo $value["description"] ; ?>
                                 </p>
-                                <a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW<span class="lnr lnr-arrow-right"></span></a>
+                                <a href="<?php echo $link ; ?>" class="primary-btn d-inline-flex align-items-center">BOOK NOW<span class="lnr lnr-arrow-right"></span></a>
                             </figcaption>
                         </figure>
                     </div>
@@ -61,84 +70,12 @@
                             <div class="desc">
                                 <h4><?php echo $value["title"] ; ?></h4>
                                 <p><?php echo $value["description"] ; ?> </p>
-                                <h5> Rs.<?php echo $value["price"] ; ?><span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
+                                <h5> Rs.<?php echo $value["price"] ; ?><span><a href="<?php echo $link ; ?>" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
                             </div>
                         </div>
                     </div>
                 <?php } ?>    
-                    <!-- <div class="col-lg-4 col-sm-6">
-                        <div class="single-product">
-                        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" />
-                            <div class="icon">
-
-                            </div>
-                            <div class="desc">
-                                <h4>Chandigarh-New Delhi</h4>
-                                <p>Best fares for New Delhi </p>
-                                <h5> Rs.6,822<span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="single-product">
-                        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" />
-                            <div class="icon">
-
-                            </div>
-                            <div class="desc">
-                                <h4>Chandigarh-New Delhi</h4>
-                                <p>Best fares for New Delhi </p>
-                                <h5> Rs.6,822<span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="single-product">
-                        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" />
-                            <div class="icon">
-
-                            </div>
-                            <div class="desc">
-                                <h4>Chandigarh-New Delhi</h4>
-                                <p>Best fares for New Delhi </p>
-                                <h5> Rs.6,822<span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="single-product">
-                        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" />
-                            <div class="icon">
-
-                            </div>
-                            <div class="desc">
-                                <h4>Chandigarh-New Delhi</h4>
-                                <p>Best fares for New Delhi </p>
-                                <h5> Rs.6,822<span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="single-product">
-                        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" />
-                            <div class="icon">
-
-                            </div>
-                            <div class="desc">
-                                <h4>Chandigarh-New Delhi</h4>
-                                <p>Best fares for New Delhi </p>
-                                <h5> Rs.6,822<span><a href="#" class="primary-btn d-inline-flex align-items-center">BOOK NOW</a></span></h5>
-                            </div>
-                        </div>
-                    </div> -->
-                    
+                   
                 </div>
             </div>
         </section>
@@ -152,7 +89,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8 d-flex no-flex-xs justify-content-between align-items-center">
                         <h5 class="text-uppercase text-white">Not yet convinced with our quality?</h5>
-                        <a href="#" class="primary-btn d-inline-flex text-uppercase text-white align-items-center">Contact Us<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="<?php echo HTTP_PATH.'index/contact' ; ?>" class="primary-btn d-inline-flex text-uppercase text-white align-items-center">Contact Us<span class="lnr lnr-arrow-right"></span></a>
                     </div>
                 </div>
             </div>

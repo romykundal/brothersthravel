@@ -3,26 +3,20 @@
         <div class="container">
         <div class="row">
         <div class="col-md-8">
-        <h2>ABOUT US</h2>
+        <h2><?php echo $this->pageInfo["pageTitle"] ?></h2>
         <div class="separator">
         </div>
-        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c5.jpg" class="align-left" width="250" />
-        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.Aww yeah, you successfully read this important alert message.</p>
-        <img src="<?php echo PUBLIC_PATH; ?>/images/front_end/c3.jpg" class="align-right" width="250" />
-        <p>This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-
-        <p>This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-
-        <p>This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        
+        <p><?php echo $this->pageInfo["content"] ?></p>
         </div>
         
         <div class="col-md-4">
         <div class="sidebar">
         <div class="widget">    
-        <h3 class="sidebar-title">Latest News</h3>      
+        <h3 class="sidebar-title">Latest Stories</h3>      
         <div id="nt-container">
-        
-        <ul id="nt">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=218632621666228" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      <!--   <ul id="nt">
             <li>
                 <a href="#">
                 <div class="news-item">
@@ -35,7 +29,7 @@
                     <p>News updates Best fares for New Delhi</p>
                     </div>
                 
-                </div><!-- News Item -->
+                </div>
             </a>
             </li>
 
@@ -51,7 +45,7 @@
                     <p>News updates Best fares for New Delhi</p>
                     </div>
                 
-                </div><!-- News Item -->
+                </div>
             </a>
             </li>
 
@@ -67,7 +61,7 @@
                     <p>News updates Best fares for New Delhi</p>
                     </div>
                 
-                </div><!-- News Item -->
+                </div>
             </a>
             </li>
 
@@ -83,7 +77,7 @@
                     <p>News updates Best fares for New Delhi</p>
                     </div>
                 
-                </div><!-- News Item -->
+                </div>
             </a>
             </li>
 
@@ -99,11 +93,11 @@
                     <p>News updates Best fares for New Delhi</p>
                     </div>
                 
-                </div><!-- News Item -->
+                </div>
             </a>
             </li>
             
-        </ul>
+        </ul> -->
        
     </div>
     </div><!-- .widget -->

@@ -28,11 +28,46 @@ class UserController extends Zend_Controller_Action
     	}
     }
 
+     public function registerAction()
+    {
+        // action body
+        $this->view->topTitle = "Sign up with BrotherTravel" ;
+        
+        // action body
+        $this->view->headTitle("Sign up user , Register User with Brother Travel ");
+        $params = $this->_request->getParams();
+        //check post form or not
+        if ($this->getRequest()->isPost()) {
+        /*
+        echo "<pre>";
+        print_r($params);
+        die("***************************Stopper");
+*/
+        if ($params) {
+
+            $u = new User();
+            $id = $u->signupUser($params);
+            
+        }
+        //echo Zend_Json::encode($id);
+        $flash = $this->_helper->getHelper('FlashMessenger');
+        $message = $this->view->translate('User has been regitered successfully.');
+        $flash->addMessage(array('success' => $message ));
+        $this->_redirect(HTTP_PATH.'user/login');
+        
+        die();
+
+
+        }
+
+    }   
+
+
     
     public function loginAction()
     {
     	// action body
-
+        $this->view->topTitle = "Sign In" ;
     	
     	$user = new Zend_Session_Namespace('user');
     	if(isset($user->userId))
@@ -58,28 +93,24 @@ class UserController extends Zend_Controller_Action
     	
     	//check post form or not
     	if ($this->getRequest()->isPost()) {
-
-
+/*echo "<pre>";
+print_r($params);
+die("***************************Stopper");*/
     		//unset then the msg session
     		Zend_Session::namespaceUnset('msg');
     		$username = $params['uname'];
     		$password = $params['pwd'];
-    		 
-    		//set authentication if user valid
-    		$data_adapter = new Auth_StaffAdapter($username, $password);
-    		
-    		    		
+            $roleId = 2;
+
+        //set authentication if user valid
+        $data_adapter = new Auth_StaffAdapter($username, $password, $roleId);
     		$auth = Zend_Auth::getInstance();
     		$result = $auth->authenticate($data_adapter);
     	
-
-    		
-    		
     		if (Auth_StaffAdapter::hasIdentity()) {
     			 
     			//create object of user class
     			$Obj = new User();
-    			
     			$Obj = Doctrine_Core::getTable('User')
     			->findOneBy('id', Auth_StaffAdapter::getIdentity()->id);
     	
@@ -89,7 +120,7 @@ class UserController extends Zend_Controller_Action
     			//print_r($user->user_data);die;
     			 
     			$user->userId = $Obj['id'];
-    			$user->firstname = $Obj['firstName'];
+    			$user->firstName = $Obj['firstName'];
     			$user->email = $Obj['email'];
     	
     			    	
@@ -121,6 +152,7 @@ class UserController extends Zend_Controller_Action
     	
     		}
     	}
+
     
     }
     

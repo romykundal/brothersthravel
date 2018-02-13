@@ -151,7 +151,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 /**
  * load module layout by geting value from application file
  * and set layout for module
- * @author kraj
+ * @author rohit
  */
 class ModuleLayoutLoader extends Zend_Controller_Action_Helper_Abstract
  {

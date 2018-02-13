@@ -76,12 +76,17 @@ class Admin_OrdersController extends Zend_Controller_Action
     	
     	if ($this->_request->isPost())
     	{
+            /*echo "<pre>";
+            print_r($params);
+            die;*/
     		$w = Doctrine_Core::getTable("Inquiries")->find($params['id']);
     		$booking= $w->updateInquiry($params);
 
     		$flash = $this->_helper->getHelper('FlashMessenger');
     		if($booking)
     		{
+                
+
     			$message = $this->view->translate('Record has been updated successfully');
     			$flash->addMessage(array('success' => $message));
     			$this->_helper->redirector(null , 'orders' , null ) ;

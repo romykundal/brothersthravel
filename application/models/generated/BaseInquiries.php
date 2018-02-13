@@ -25,7 +25,10 @@ abstract class BaseInquiries extends Doctrine_Record
              'comment' => 'PK',
              'length' => '20',
              ));
-
+        $this->hasColumn('user_id', 'integer', 20, array(
+         'type' => 'integer',
+         'length' => '20',
+         ));   
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
              'length' => '255',
@@ -34,7 +37,15 @@ abstract class BaseInquiries extends Doctrine_Record
              'type' => 'string',
              'length' => '255',
              ));
-		$this->hasColumn('phoneNumber', 'string', 20, array(
+		$this->hasColumn('gender', 'enum', null, array(
+                'type' => 'enum',
+                'values' =>
+                array(
+                        0 => 'male',
+                        1 => 'female',
+                ),
+        ));
+        $this->hasColumn('phoneNumber', 'string', 20, array(
              'type' => 'string',
              'length' => '20',
              ));
@@ -42,18 +53,30 @@ abstract class BaseInquiries extends Doctrine_Record
              'type' => 'string',
              'length' => '1024',
              ));
+        $this->hasColumn('zipcode', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => '20',
+             ));
 		$this->hasColumn('departure', 'string', 1024, array(
              'type' => 'string',
              'length' => '1024',
              ));
-		$this->hasColumn('members', 'integer', 20, array(
+        $this->hasColumn('arrival', 'string', 1024, array(
+             'type' => 'string',
+             'length' => '1024',
+             ));     
+		$this->hasColumn('adult', 'integer', 20, array(
              'type' => 'integer',
              'length' => '20',
              ));
-		$this->hasColumn('arrival', 'string', 1024, array(
-             'type' => 'string',
-             'length' => '1024',
-             ));	 
+        $this->hasColumn('child', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => '20',
+             ));
+        $this->hasColumn('infant', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => '20',
+             ));
         $this->hasColumn('departureDate', 'string', 100, array(
              'type' => 'string',
              'length' => '100',
@@ -109,7 +132,8 @@ abstract class BaseInquiries extends Doctrine_Record
 		$this->hasColumn('category_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => '20',
-             ));     
+             ));   
+
         $this->hasColumn('status', 'enum', null, array(
                 'type' => 'enum',
                 'values' =>

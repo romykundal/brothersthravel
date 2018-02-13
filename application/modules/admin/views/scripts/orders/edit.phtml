@@ -44,7 +44,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input readonly type="text"  maxlength="54" name="Title" id="Title" value="<?php echo $this->productdata["name"] ; ?>" placeholder="<?php echo $this->translate('Name'); ?>" class="span3">
+                                <input disabled type="text"  maxlength="54" name="Title" id="Title" value="<?php echo $this->productdata["name"] ; ?>" placeholder="<?php echo $this->translate('Name'); ?>" class="span3">
                                 </div>                        
                             </div>
                         </div>
@@ -54,7 +54,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly  maxlength="54" name="Slug" id="Slug" value="<?php echo $this->productdata["phoneNumber"] ; ?>" placeholder="<?php echo $this->translate('phoneNumber'); ?>" class="span3">
+                                <input type="text" disabled  maxlength="54" name="Slug" id="Slug" value="<?php echo $this->productdata["phoneNumber"] ; ?>" placeholder="<?php echo $this->translate('phoneNumber'); ?>" class="span3">
                                 </div>                        
                             </div>
                         </div>
@@ -64,7 +64,17 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly name="email" id="email" value="<?php echo $this->productdata["email"] ; ?>" placeholder="<?php echo $this->translate('Email'); ?>" class="span3">
+                                <input type="text" disabled name="email" id="email" value="<?php echo $this->productdata["email"] ; ?>" placeholder="<?php echo $this->translate('Email'); ?>" class="span3">
+                                
+                                </div>                        
+                            </div>
+                        </div>
+                         <div class="mainpage-content-line">
+                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Travel Type'); ?></strong></label></div>
+                            <div class="mainpage-content-right control-group">
+                                <div class="mainpage-content-right-inner-right-other help-inline"></div>
+                                <div class="mainpage-content-right-inner-left-other">
+                                <input type="text" disabled name="travelType" id="travelType" value="<?php echo ucfirst($this->productdata["travelType"]) ; ?>" placeholder="<?php echo $this->translate('travelType'); ?>" class="span3">
                                 </div>                        
                             </div>
                         </div>
@@ -74,7 +84,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly name="departure" id="departure" value="<?php echo $this->productdata["departure"] ; ?>" placeholder="<?php echo $this->translate('Departure'); ?>" class="span3">
+                                <input type="text" disabled name="departure" id="departure" value="<?php echo $this->productdata["departure"] ; ?>" placeholder="<?php echo $this->translate('Departure'); ?>" class="span3">
                                 </div>                        
                             </div>
                         </div>
@@ -84,7 +94,7 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly name="arrival" id="arrival" value="<?php echo $this->productdata["arrival"] ; ?>" placeholder="<?php echo $this->translate('Arrival'); ?>" class="span3">
+                                <input type="text" disabled name="arrival" id="arrival" value="<?php echo $this->productdata["arrival"] ; ?>" placeholder="<?php echo $this->translate('Arrival'); ?>" class="span3">
                                 </div>                        
                             </div>
                         </div>
@@ -94,37 +104,58 @@ var MaxImage = 5-<?php echo count($this->imgprodct) ?>;
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly name="members" id="members" value="<?php echo $this->productdata["members"] ; ?>" placeholder="<?php echo $this->translate('Members'); ?>" class="span3">
+<input type="text" value="<?php echo "Adult: " .$this->productdata["adult"] ." Children: ". $this->productdata["child"]. " Infant: " .$this->productdata["infant"] ; ?>" placeholder="<?php echo $this->translate('Members'); ?>" disabled name="members" id="members" class="span3">
                                 </div>                        
                             </div>
                         </div>
                         <div class="mainpage-content-line">
-                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Departure Date & Time'); ?></strong></label></div>
+                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Departure Date'); ?></strong></label></div>
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly value="<?php echo $this->productdata["departureDate"] .' '. $this->productdata["departureTime"] ; ?>" class="span3">
+                                <input type="text" value="<?php echo $this->productdata["departureDate"] ; ?>" name="departureDate" class="span3">
                                 </div>                        
                             </div>
                         </div>
                         <div class="mainpage-content-line">
-                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Return Date & Time'); ?></strong></label></div>
+                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Return Date'); ?></strong></label></div>
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly value="<?php echo $this->productdata["returnDate"] .' '.$this->productdata["returnTime"] ; ?>" class="span3">
+                                <input type="text" name="returnDate" value="<?php echo $this->productdata["returnDate"] ; ?>" class="span3">
+                                </div>                        
+                            </div>
+                        </div>      
+
+                        <div class="mainpage-content-line">
+                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Departure Time'); ?></strong></label></div>
+                            <div class="mainpage-content-right control-group">
+                                <div class="mainpage-content-right-inner-right-other help-inline"></div>
+                                <div class="mainpage-content-right-inner-left-other">
+                                <input type="text" name="departureTime" value="<?php echo $this->productdata["departureTime"] ; ?>" class="span3">
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="mainpage-content-line">
+                            <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Return Time'); ?></strong></label></div>
+                            <div class="mainpage-content-right control-group">
+                                <div class="mainpage-content-right-inner-right-other help-inline"></div>
+                                <div class="mainpage-content-right-inner-left-other">
+                                <input type="text" name="returnTime" value="<?php echo $this->productdata["returnTime"] ; ?>" class="span3">
                                 </div>                        
                             </div>
                         </div>                        
-                        <div class="mainpage-content-line">
+
+                  
+                        <!-- <div class="mainpage-content-line">
                             <div class="mainpage-content-left"><label><strong><?php echo $this->translate('Class'); ?></strong></label></div>
                             <div class="mainpage-content-right control-group">
                                 <div class="mainpage-content-right-inner-right-other help-inline"></div>
                                 <div class="mainpage-content-right-inner-left-other">
-                                <input type="text" readonly value="<?php echo $this->productdata["class"] ; ?>" class="span3">
+                                <input type="text" disabled value="<?php echo $this->productdata["class"] ; ?>" class="span3">
                                 </div>                        
                             </div>
-                        </div>     
+                        </div>      -->
 
 
                         <div class="mainpage-content-line">

@@ -656,7 +656,7 @@ function getUserList(searchtext) {
 							{
 								"fnRender" : function(obj) {
 
-									return obj.aData.phoneNumber ;
+									return obj.aData.phonenumber ;
 
 								},
 								

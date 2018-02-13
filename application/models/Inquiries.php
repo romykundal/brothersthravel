@@ -51,16 +51,24 @@ class Inquiries extends BaseInquiries
 	{
 
 		  $Obj = new Inquiries();
-		  $Obj->name = BackEnd_Helper_viewHelper::stripSlashesFromString($data["name"]);
+		  $name = $data["firstName"] .' '. $data["lastName"] ;
+		  $Obj->user_id = BackEnd_Helper_viewHelper::stripSlashesFromString($data["user_id"]);
+		  $Obj->name = BackEnd_Helper_viewHelper::stripSlashesFromString($name);
 		  $Obj->email = BackEnd_Helper_viewHelper::stripSlashesFromString($data["email"]);
-		  $Obj->phoneNumber = BackEnd_Helper_viewHelper::stripSlashesFromString($data["phone"]);
+		  $Obj->phoneNumber = BackEnd_Helper_viewHelper::stripSlashesFromString($data["phoneNumber"]);
 		  $Obj->address = BackEnd_Helper_viewHelper::stripSlashesFromString($data["address"]);
-		  $Obj->travelDate = BackEnd_Helper_viewHelper::stripSlashesFromString($data["travelDate"]);
+		  $Obj->zipcode = BackEnd_Helper_viewHelper::stripSlashesFromString($data["zipcode"]);
+		  
+		  $Obj->departure = BackEnd_Helper_viewHelper::stripSlashesFromString($data["departure"]);
+		  $Obj->arrival = BackEnd_Helper_viewHelper::stripSlashesFromString($data["arrival"]);
+		  $Obj->departureDate = BackEnd_Helper_viewHelper::stripSlashesFromString($data["departureDate"]);
 		  $Obj->returnDate = BackEnd_Helper_viewHelper::stripSlashesFromString($data["returnDate"]);
-		  $Obj->pickup_location = BackEnd_Helper_viewHelper::stripSlashesFromString($data["pickup_location"]);
-		  $Obj->quantity_member = BackEnd_Helper_viewHelper::stripSlashesFromString($data["quantity"]);
-		  $Obj->desination = BackEnd_Helper_viewHelper::stripSlashesFromString($data["desination"]);
-		  $Obj->category_id = BackEnd_Helper_viewHelper::stripSlashesFromString($data["catg"]);
+		  $Obj->adult = BackEnd_Helper_viewHelper::stripSlashesFromString($data["adult"]);
+		  $Obj->child = BackEnd_Helper_viewHelper::stripSlashesFromString($data["child"]);
+		  $Obj->infant = BackEnd_Helper_viewHelper::stripSlashesFromString($data["infant"]);
+		  $Obj->travelType = BackEnd_Helper_viewHelper::stripSlashesFromString($data["travelType"]);
+		  $Obj->gender = BackEnd_Helper_viewHelper::stripSlashesFromString($data["gender"]);
+
 		  
 		  $Obj->save();
 		  $lid = $Obj->id;
@@ -69,15 +77,20 @@ class Inquiries extends BaseInquiries
 	}
 
 
-		function updateInquiry($params){
-			
-		$this->baseFare = BackEnd_Helper_viewHelper::stripSlashesFromString($params['baseFare']);
-		$this->surcharges = BackEnd_Helper_viewHelper::stripSlashesFromString($params['surcharges']);
-		$this->grandTotal = BackEnd_Helper_viewHelper::stripSlashesFromString($params['grandTotal']);
-		$this->discount = BackEnd_Helper_viewHelper::stripSlashesFromString($params['discount']);
-		$this->stop = BackEnd_Helper_viewHelper::stripSlashesFromString($params['stop']);
-		$this->stopDetails = BackEnd_Helper_viewHelper::stripSlashesFromString($params['stopDetails']);
-		$this->status = BackEnd_Helper_viewHelper::stripSlashesFromString($params['status']);
+	function updateInquiry($params){
+		
+	$this->departureDate = BackEnd_Helper_viewHelper::stripSlashesFromString($params['departureDate']);
+	$this->returnDate = BackEnd_Helper_viewHelper::stripSlashesFromString($params['returnDate']);
+	$this->departureTime = BackEnd_Helper_viewHelper::stripSlashesFromString($params['departureTime']);
+	$this->returnTime = BackEnd_Helper_viewHelper::stripSlashesFromString($params['returnTime']);
+
+	$this->baseFare = BackEnd_Helper_viewHelper::stripSlashesFromString($params['baseFare']);
+	$this->surcharges = BackEnd_Helper_viewHelper::stripSlashesFromString($params['surcharges']);
+	$this->grandTotal = BackEnd_Helper_viewHelper::stripSlashesFromString($params['grandTotal']);
+	$this->discount = BackEnd_Helper_viewHelper::stripSlashesFromString($params['discount']);
+	$this->stop = BackEnd_Helper_viewHelper::stripSlashesFromString($params['stop']);
+	$this->stopDetails = BackEnd_Helper_viewHelper::stripSlashesFromString($params['stopDetails']);
+	$this->status = BackEnd_Helper_viewHelper::stripSlashesFromString($params['status']);
 		
 		$pageid = @$params['id'];
 		
@@ -136,17 +149,13 @@ class Inquiries extends BaseInquiries
 	 * Version 1.0
 	 */
 	
-	public static function getproductForFront($catId){
+	public static function getOrdersForFront($uid){
 	
 		$data = Doctrine_Query::create()
-		->select('g.*, cat.name,cat.description')
-		->from('inquiries g')
-		// ->leftJoin('g.Image img')
-		->leftJoin('g.Category cat')
-		->where('g.categoryid=?', $catId)
-		->andWhere('cat.deleted = 0')
-		->orderBy('g.id DESC')
-		//->getSqlQuery();
+		->select('i.*')
+		->from('inquiries i')
+		->where('i.user_id=?', $uid)
+		->orderBy('i.id DESC')
 		->fetchArray();
 		return $data;
 	}

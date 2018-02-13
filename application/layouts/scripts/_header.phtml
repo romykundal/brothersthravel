@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicon-->
   <!-- Author Meta -->
-  <meta name="author" content="CodePixar">
+  <meta name="author" content="http://thebrotherstravel.com">
   <!-- Meta Description -->
-  <meta name="description" content="">
+  <meta name="description" content="the brother travel">
   <!-- Meta Keyword -->
-  <meta name="keywords" content="">
+  <meta name="keywords" content="brother travel, book flights, train, booking online, cosultant also">
   <!-- meta character set -->
   <meta charset="UTF-8">
   <!-- Site Title -->
-  <title>Flight Booking</title>
+  <title>The Brothers Travel</title>
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600" rel="stylesheet">
     <!--
@@ -46,6 +46,8 @@ echo $this->headTitle ();
 ?>
 
     <script type="text/javascript">
+var HOST_PATH = 'http://' + window.location.host + '/';
+    
       var nt_example1 = $('#nt').newsTicker({
                 row_height: 80,
                 max_rows: 3,
@@ -56,6 +58,7 @@ echo $this->headTitle ();
     </script>
   </head>
   <body>
+    <?php $sessionNamespace = new Zend_Session_Namespace(); ?>
     <div id="top"></div>
     <!-- Start Header Area -->
     <header class="default-header">
@@ -63,19 +66,41 @@ echo $this->headTitle ();
         <div class="container">
           <div class="header-content d-flex justify-content-between align-items-center">
             <div class="logo">
-              <a href="#top" class="smooth">
-                <h2>Brothers Travels</h2>
+              <a href="<?php echo HTTP_PATH; ?>" class="smooth">
+                <!-- <h2>Brothers Travels</h2> -->
+                <img src="<?php echo PUBLIC_PATH; ?>images/front_end/BrotherLogo1.png" alt="Brothers Travels">
               </a>
             </div>
+<?php 
+ if(Zend_Auth::getInstance()->hasIdentity()){
+
+  $firstName =  Zend_Auth::getInstance()->getIdentity()->firstName;
+  if( strlen( $firstName ) > 20 ) {
+      $cut_text = substr( $firstName , 0, 10 ); //cut at 17 chars
+      $end_text = $cut_text."..."; // add three dots
+      $firstName =  sprintf( "<abbr title='%s'>%s</abbr>" , $firstName , $end_text);
+  }
+}
+?>
+
             <div class="right-bar d-flex align-items-center">
               <nav class="d-flex align-items-center">
                 <ul class="main-menu">
-                  <li><a href="<?php echo HTTP_PATH; ?>">Home</a></li>
+                  <!-- <li><a href="<?php echo HTTP_PATH; ?>">Home</a></li> -->
                   <li><a href="<?php echo HTTP_PATH.'index/aboutus' ; ?>">About</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">SignIn</a></li>
-                  <li><a href="#">SignUp</a></li>
+                  <li><a href="<?php echo HTTP_PATH.'products/index' ; ?>">Deals</a></li>
+                  <li><a href="<?php echo HTTP_PATH.'index/contact' ; ?>">Contact</a></li>
+                  <?php  if(!Zend_Auth::getInstance()->hasIdentity()){  ?>
+                  <li><a href="<?php echo HTTP_PATH.'user/login' ; ?>">Login In</a></li>
+                  <li><a href="<?php echo HTTP_PATH.'user/register' ; ?>">Sign Up</a></li>
+                  <?php }else{ ?>
+                  <li>
+                  <a title="My Account" href="<?php echo HTTP_PATH.'userprofile/index' ; ?>">
+                  <?php echo ucfirst(strtolower($firstName)) ; ?>  
+                  </a>
+                  </li>
+                  <li><a  href="<?php echo HTTP_PATH.'user/logout' ; ?>"><strong>Log-out</strong></a></li>
+                  <?php } ?>
                 </ul>
                 <a href="#" class="mobile-btn"><span class="lnr lnr-menu"></span></a>
               </nav>

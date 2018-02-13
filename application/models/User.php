@@ -38,6 +38,27 @@ class User extends BaseUser
 		}
 		return false;
 	}
+
+
+		public function signupUser($params) {
+		
+		
+		$this->firstName = BackEnd_Helper_viewHelper::stripSlashesFromString($params['firstName']);
+		$this->email = BackEnd_Helper_viewHelper::stripSlashesFromString($params['email']);
+		$this->lastName =BackEnd_Helper_viewHelper::stripSlashesFromString($params['lastName']);
+		$this->password = BackEnd_Helper_viewHelper::stripSlashesFromString($params['password']);
+		$this->phonenumber= BackEnd_Helper_viewHelper::stripSlashesFromString($params['phonenumber']);
+		$this->address= BackEnd_Helper_viewHelper::stripSlashesFromString($params['address']);
+		$this->zipcode= BackEnd_Helper_viewHelper::stripSlashesFromString($params['zipcode']);
+		$this->status = 1;
+		$this->roleId = 2;
+
+		
+		//call doctrine save function 
+		$this->save();
+		return $this->id;
+
+		}
 	
 
 	public function addUser($params,$imageName) {
@@ -92,23 +113,17 @@ class User extends BaseUser
 	public function update($params,$imageName='') {
 	   
 		
-		$this->firstName =BackEnd_Helper_viewHelper::stripSlashesFromString ($params['firstName']);
-		$this->lastName =BackEnd_Helper_viewHelper::stripSlashesFromString ($params['lastName']);
-		//$this->phoneNumber= BackEnd_Helper_viewHelper::stripSlashesFromString($params['phoneNumber']);
-		//$this->Address= BackEnd_Helper_viewHelper::stripSlashesFromString($params['Address']);
-		//$this->ZipCode= BackEnd_Helper_viewHelper::stripSlashesFromString($params['ZipCode']);
-		//$this->roleId= BackEnd_Helper_viewHelper::stripSlashesFromString($params['role']);
-		
-	
-		
-		
-	    
-		
+		$this->firstName = BackEnd_Helper_viewHelper::stripSlashesFromString ($params['firstName']);
+		$this->lastName = BackEnd_Helper_viewHelper::stripSlashesFromString ($params['lastName']);
+		$this->email = BackEnd_Helper_viewHelper::stripSlashesFromString ($params['email']);
+		$this->phonenumber= BackEnd_Helper_viewHelper::stripSlashesFromString($params['phonenumber']);
+		$this->address= BackEnd_Helper_viewHelper::stripSlashesFromString($params['address']);
+		$this->zipcode= BackEnd_Helper_viewHelper::stripSlashesFromString($params['zipcode']);
+			
 		$this->save();
 		
-	
 		// check user want to update password or not based upon old password
-		if( strlen($params['oldPassword'])  > 7 )
+		if( @strlen($params['oldPassword'])  > 7 )
 		{
 			// check user entered correct old password or not 
 			if(self::validatePassword($params['oldPassword']))
@@ -233,12 +248,10 @@ class User extends BaseUser
 
   
   
-  public static function getuserdrawings($uid) {
+  public static function getuserDetails($uid) {
   
-  	$data = Doctrine_Query::create()->select("u.*,d.*,i.*")
+  	$data = Doctrine_Query::create()->select("u.*")
   	->from('User u')
-  	->leftJoin("u.Drawings d")
-  	->leftJoin("d.images i")
   	->where('u.id=?',$uid)
   	->fetchArray();
   

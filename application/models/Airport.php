@@ -112,19 +112,33 @@ class Airport extends BaseAirport
 	 * Version 1.0
 	 */
 	
-	public static function getproductForFront($catId){
+	public static function getAirportForFront(){
 	
 		$data = Doctrine_Query::create()
-		->select('g.*, cat.name,cat.description')
-		->from('product g')
-		// ->leftJoin('g.Image img')
-		->leftJoin('g.Category cat')
-		->where('g.categoryid=?', $catId)
-		->andWhere('cat.deleted = 0')
-		->orderBy('g.id DESC')
+		->select('a.*')
+		->from('airport a')
+		->orderBy('a.name ASC')
+		->limit(100)
 		//->getSqlQuery();
 		->fetchArray();
 		return $data;
 	}
+
+	/**
+	 * get to five category 
+	 * @param string $keyword
+	 * @return array $data
+	 * @author Rohit kumar
+	 * @version 1.0
+	 */
+	public static function searchToTen($keyword) {
+
+		$data = Doctrine_Query::create()->select('c.cityName as name, c.name as airport,')
+				->from("Airport c")->where('c.deleted=0')
+				->andWhere("c.cityName LIKE ?", "$keyword%")->orderBy("c.cityName ASC")
+				->limit(20)->fetchArray();
+		return $data;
+	}
+
 	
 }

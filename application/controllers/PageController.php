@@ -44,12 +44,11 @@ class PageController extends Zend_Controller_Action
     	exit();
     }
     
-    public function tearmsandconditionPageAction(){
+    public function tearmsandconditionAction(){
+        $this->view->topTitle = "Terms and Conditions" ;
     
-    	$this->_helper->layout()->disableLayout();
     	$params = $this->_getAllParams();
-    
-    	
+       	
     	
     }
     

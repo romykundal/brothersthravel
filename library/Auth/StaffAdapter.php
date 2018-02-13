@@ -7,10 +7,12 @@
 class Auth_StaffAdapter implements Zend_Auth_Adapter_Interface {
 	protected $email = "";
 	protected $password = "";
+	protected $roleId = 2;
 	
-	public function __construct($email, $password, $loginMode = null) {
+	public function __construct($email, $password, $roleId, $loginMode = null) {
 		$this->email = $email;
 		$this->password = $password;
+		$this->roleId = $roleId ;
 	
 	}
 	/**
@@ -21,7 +23,7 @@ class Auth_StaffAdapter implements Zend_Auth_Adapter_Interface {
 		// echo $this->email;
 		// echo $password;
 		
-		$user = Doctrine_Query::create()->from("User u" )->where("u.email="."'".$this->email."'")->addWhere("u.deleted=0")->fetchOne();
+		$user = Doctrine_Query::create()->from("User u" )->where("u.email="."'".$this->email."'")->addWhere("u.deleted=0")->addWhere("u.roleId="."".$this->roleId."")->fetchOne();
 		
 		if ($user) {
 			
