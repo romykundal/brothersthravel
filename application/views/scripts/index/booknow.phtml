@@ -10,16 +10,16 @@
 <!-- Start Main Content -->
     <div class="main-content">
 
-<div class='wrap columns-2' id='pageList'>
+<div class='wrap columns-2' id='profile'>
     <?php if($this->messageSuccess!='' || $this->messageError!='' ){?>
-    <br><div class ="mainpage-content-colorbox success">
+    <br>
     <?php if($this->messageSuccess!=''){?>
-    <span class="success"><?php echo $this->messageSuccess; ?></span>
+    <div class ="alert alert-success success"><?php echo $this->messageSuccess; ?></div>
     <?php }?>
     <?php if($this->messageError!=''){?>
-    <span class="error"><?php echo $this->messageError; ?></span>
+    <div class ="alert alert-danger success"><?php echo $this->messageError; ?> </div>
     <?php } ?>
-    </div>
+   
     <?php 
     }?> 
 </div>   
@@ -46,20 +46,12 @@
       <div class="single-input">
         <label for="fromLocation">Departure Station/City</label>
           <input type="text" id="SearchAirport" name="departure" aria-describedby="emailHelp" placeholder="e.g. New York" required>
-         <!--  <select class="selectpicker" data-show-subtext="true" data-live-search="true"  name="departure" id="departure">
-            <?php //foreach ($this->airports as $key => $value) { ?>
-            <option value="<?php //echo $value["code"] ; ?>"><?php //echo $value["name"] ; ?></option>
-            <?php //} ?>
-          </select> -->
+        
       </div>
         <div class="single-input">
         <label for="toLocation">Arrival Station/City</label>
           <input type="text" id="findAirport" name="arrival" aria-describedby="emailHelp" placeholder="e.g Albama" required>
-          <!-- <select class="selectpicker" data-show-subtext="true" data-live-search="true"  name="arrival" id="arrival">
-            <?php //foreach ($this->airports as $key => $value) { ?>
-            <option value="<?php //echo $value["code"] ; ?>"><?php //echo $value["name"] ; ?></option>
-            <?php //} ?>
-          </select>      -->     
+             
       </div>    
       <div class="single-input">
       
@@ -71,7 +63,7 @@
 
         <div class="col-sm-6">
           <label for="returnDate">Return Date</label>
-            <input type="date" id="returnDate" name="returnDate" aria-describedby="emailHelp" placeholder="" required>
+            <input type="date" id="returnDate" name="returnDate" placeholder="">
         </div>
       </div>
 
